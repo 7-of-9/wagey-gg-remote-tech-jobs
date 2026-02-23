@@ -10,18 +10,18 @@
 | Region | Jobs | With Salary | Verified | Browse |
 |--------|------|-------------|----------|--------|
 | Worldwide | 721 | 293 | 721 | [View below](#worldwide) |
-| Europe & Middle East | 6,400 | 1,458 | 6,399 | [View jobs](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs) |
+| Europe & Middle East | 6,375 | 1,458 | 6,374 | [View jobs](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs) |
 | Asia-Pacific | 2,167 | 287 | 2,167 | [View jobs](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs) |
 | North America | 9,778 | 6,683 | 9,776 | [View below](#north-america) |
 | Latin America | 663 | 139 | 663 | [View below](#latin-america) |
-| **Total as of 23-Feb-2026 01:18 UTC** | **19,729** | **8,860** | **19,726** | |
+| **Total as of 23-Feb-2026 01:23 UTC** | **19,704** | **8,860** | **19,701** | |
 
 ## Top Jobs
 
 | Company | Role | Location | Salary | Skills | Age | Apply |
 |---------|------|----------|--------|--------|-----|-------|
-| The Browser Company | Technical Lead, Developer Experience | Remote - ET (Eastern) |  |  | 9h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_fe56a58a2d4809b4" alt="" height="20"> STATSports | Full Stack Software Developer | Budapest, Budapest, Hungary |  | Full Stack, Document Management, Documentation +12 | 9h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| The Browser Company | Technical Lead, Developer Experience | Remote - ET (Eastern) |  |  | 10h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=co_fe56a58a2d4809b4" alt="" height="20"> STATSports | Full Stack Software Developer | Budapest, Budapest, Hungary |  | Full Stack, Document Management, Documentation +12 | 10h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | Nansen.ai | Head of BD Staking | Remote - NYC area, Remote |  | Storytelling, Business Development, B2B +11 | 10h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | Tools for Humanity | Sr. Growth & Operations Lead, South Korea | Remote - Seoul, South Korea |  |  | 10h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=e838b850b34df76a" alt="" height="20"> Bitpanda | Country Lead | Stockholm, Sweden |  | Danish, KPI Tracking, Nordics +5 | 10h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
@@ -31,15 +31,15 @@
 | Stellar Development Foundation | Senior Manager, Government Relations | Washington D.C. |  | Government Relations, Team Leadership, Public Relations +2 | 10h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=dbeb1c32b66fd771" alt="" height="20"> Mozilla | Staff Designer | Remote - USA |  | Learning & Development, Front-end, Mentoring +1 | 10h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=co_6c478e61dc5b6f23" alt="" height="20"> AutoDS | Backend Developer  | Remote |  | Python, SQL, Excel +4 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_903ad12b73cf199e" alt="" height="20"> voldex | Marketing Specialist, Growth - Brookhaven | Remote - PT (Pacific) |  | Content Creation, CTR, Reporting | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_903ad12b73cf199e" alt="" height="20"> voldex | Marketing Specialist, Growth - Driving Empire | Remote - CT (Central) |  | Content Creation, Dashboard Creation, Google Sheets +4 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_903ad12b73cf199e" alt="" height="20"> voldex | FP&A Manager | Remote - ET (Eastern) |  | Budget Forecasting, Google Sheets, Excel +8 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_903ad12b73cf199e" alt="" height="20"> voldex | Render Artist - NFL Universe Football | Remote - PT (Pacific) |  | Render, Monday.com, Asana +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_903ad12b73cf199e" alt="" height="20"> voldex | Software Engineer - Brookhaven | Remote - ET (Eastern) |  | AWS, Lua, Snowflake +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_903ad12b73cf199e" alt="" height="20"> voldex | UGC Artist - NFL Universe Football | Remote - PT (Pacific) |  | Monday.com, Asana, Jira +1 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| august | Growth Marketing Manager | Remote - New York \| Remote - USA * |  | SQL, Python, JavaScript +8 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_2fcd9c703a7b40cf" alt="" height="20"> summation | Account Executive | Remote - Bellevue, WA; Remote |  | Team Management, Product Marketing, Enterprise Sales +6 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| august | Full-Stack GTM Engineer | Remote - New York \| Remote - USA * |  | SQL, Python, JavaScript +17 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Voldex Games | Marketing Specialist, Growth - Brookhaven | Remote - PT (Pacific) |  | Content Creation, CTR, Reporting | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Voldex Games | Marketing Specialist, Growth - Driving Empire | Remote - CT (Central) |  | Content Creation, Dashboard Creation, Google Sheets +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Voldex Games | FP&A Manager | Remote - ET (Eastern) |  | Budget Forecasting, Google Sheets, Excel +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Voldex Games | Render Artist - NFL Universe Football | Remote - PT (Pacific) |  | Render, Monday.com, Asana +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Voldex Games | Software Engineer - Brookhaven | Remote - ET (Eastern) |  | AWS, Lua, Snowflake +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Voldex Games | UGC Artist - NFL Universe Football | Remote - PT (Pacific) |  | Monday.com, Asana, Jira +1 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| august | Growth Marketing Manager | Remote - New York \| Remote - USA * |  | SQL, Python, JavaScript +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=co_2fcd9c703a7b40cf" alt="" height="20"> summation | Account Executive | Bellevue, Washington, United States |  | Team Management, Product Marketing, Enterprise Sales +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| august | Full-Stack GTM Engineer | Remote - New York \| Remote - USA * |  | SQL, Python, JavaScript +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 
 
 > Upload your CV at [wagey.gg](https://wagey.gg?ref=github) for smart matching and one-click apply.
@@ -60,10 +60,10 @@ Remote jobs with no location restriction.
 | <img src="https://wagey.gg/api/company-logo?id=b4791cd01a25d612" alt="" height="20"> Tanium | Careers | Unknown |  |  | 16h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=9f3fda2fef6dda85" alt="" height="20"> Canonical | Solutions Architect for Automotive | Remote - Home based - Worldwide |  | C++, Rust, Python +2 | 16h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=4af7efd3d4d94c5a" alt="" height="20"> Ardent | Test Automation Engineer | Remote |  | Java, C#, Selenium +4 | 16h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=5f4d7c3215edf1da" alt="" height="20"> VRChat | Head of Creative Studio at VRChat | Remote - Anywhere |  | Content Creation, Jira, Linear | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=5f4d7c3215edf1da" alt="" height="20"> VRChat | Senior Product Designer, Experience (Social Core) at VRChat | Remote - Anywhere |  | Reporting, Close | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=5f4d7c3215edf1da" alt="" height="20"> VRChat | Product Designer, Creators at VRChat | Remote - Anywhere |  | Content Creation, Figma | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=5f4d7c3215edf1da" alt="" height="20"> VRChat | Unity Technical Artist, Live Ops Content Pipeline at VRChat | Remote - Anywhere |  | C# | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=5f4d7c3215edf1da" alt="" height="20"> VRChat | Head of Creative Studio at VRChat | Remote - Anywhere |  | Content Creation, Jira, Linear | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=5f4d7c3215edf1da" alt="" height="20"> VRChat | Senior Product Designer, Experience (Social Core) at VRChat | Remote - Anywhere |  | Reporting, Close | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=5f4d7c3215edf1da" alt="" height="20"> VRChat | Product Designer, Creators at VRChat | Remote - Anywhere |  | Content Creation, Figma | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=5f4d7c3215edf1da" alt="" height="20"> VRChat | Unity Technical Artist, Live Ops Content Pipeline at VRChat | Remote - Anywhere |  | C# | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | Martell Ventures | AI Engineer | Remote |  | Full Stack, Plaid, Shopify +2 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=2a263b152b6dcf8f" alt="" height="20"> Ripple | Open Role — VP, Corporate Development | Unknown |  | Go, Prospecting, Product Marketing +7 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=d18eabd76bdc6fc6" alt="" height="20"> Brave | Sr. Software Engineer - UI | Remote - Anywhere |  | Java, C#, PHP +2 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
@@ -439,11 +439,11 @@ Remote jobs with no location restriction.
 | Oowlish Technology | Oowlish Technology - Frontend Software Engineer (Angular) | Remote - Greater Fortaleza |  | TypeScript, JavaScript, Angular +2 | 9d | [Apply](https://wagey.gg/jobs/c76d2be11750ecac-oowlish-technology-frontend-software-engineer-angular-at-oowlish-technology?ref=github) |
 | Wikimedia Foundation | Director, People Transformation | Remote - Anywhere | $162k - $242k | Coaching, Team Leadership, Performance Management +2 | 9d | [Apply](https://wagey.gg/jobs/6622ffffdcb5b6c0-director-people-transformation-at-wikimedia-foundation?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=81b06f9455daf4a3" alt="" height="20"> chilipiper | Senior Demand Gen/Growth Marketer | Remote - Anywhere | $2k/month | Campaign Management, B2B, CAC | 9d | [Apply](https://wagey.gg/jobs/de7deff938fef53b-senior-demand-gen-growth-marketer-at-chilipiper?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=25ad46c20243b7d0" alt="" height="20"> Newsela | Director, Product Strategy (Supplemental & Assessment Portfolio) | Remote | $165k - $175k/year | Procurement, Product Marketing, NPS +1 | 9d | [Apply](https://wagey.gg/jobs/5d9aebdab73f6d1a-director-product-strategy-supplemental-assessment-portfolio-at-newsela?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=cbcd62af68c920b6" alt="" height="20"> Vannevar | Staff Technical Product Manager | Hybrid |  |  | 9d | [Apply](https://wagey.gg/jobs/a81505f4a8d526e8-staff-technical-product-manager-at-vannevar?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=44f12a02a2a95768" alt="" height="20"> Prolific  | AI Trainer - Clinicians  | Remote | $130/hour |  | 9d | [Apply](https://wagey.gg/jobs/1ebd98abf535b70b-ai-trainer-clinicians-at-prolific?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=44f12a02a2a95768" alt="" height="20"> Prolific  | AI Trainer - Audiologists   | Remote | $30/hour |  | 9d | [Apply](https://wagey.gg/jobs/13b0fd5b2d28f94e-ai-trainer-audiologists-at-prolific?ref=github) |
-| Midi Health | Influencer Marketing Contractor  | Remote |  | Brand Management, Program Management, Reporting +2 | 9d | [Apply](https://wagey.gg/jobs/2bef15a1c13daeab-influencer-marketing-contractor-at-midi-health?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=25ad46c20243b7d0" alt="" height="20"> Newsela | Director, Product Strategy (Supplemental & Assessment Portfolio) | Remote | $165k - $175k/year | Procurement, Product Marketing, NPS +1 | 10d | [Apply](https://wagey.gg/jobs/5d9aebdab73f6d1a-director-product-strategy-supplemental-assessment-portfolio-at-newsela?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=cbcd62af68c920b6" alt="" height="20"> Vannevar | Staff Technical Product Manager | Hybrid |  |  | 10d | [Apply](https://wagey.gg/jobs/a81505f4a8d526e8-staff-technical-product-manager-at-vannevar?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=44f12a02a2a95768" alt="" height="20"> Prolific  | AI Trainer - Clinicians  | Remote | $130/hour |  | 10d | [Apply](https://wagey.gg/jobs/1ebd98abf535b70b-ai-trainer-clinicians-at-prolific?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=44f12a02a2a95768" alt="" height="20"> Prolific  | AI Trainer - Audiologists   | Remote | $30/hour |  | 10d | [Apply](https://wagey.gg/jobs/13b0fd5b2d28f94e-ai-trainer-audiologists-at-prolific?ref=github) |
+| Midi Health | Influencer Marketing Contractor  | Remote |  | Brand Management, Program Management, Reporting +2 | 10d | [Apply](https://wagey.gg/jobs/2bef15a1c13daeab-influencer-marketing-contractor-at-midi-health?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=c47aae45077f45fa" alt="" height="20"> colibrigroup | Colibri Group - Senior Specialist, CPA and EA Curriculum | Remote - 1 Remote |  | CPA, Team Management, Curriculum Development +2 | 10d | [Apply](https://wagey.gg/jobs/8ee3e274e97af282-colibri-group-senior-specialist-cpa-and-ea-curriculum-at-colibrigroup?ref=github) |
 | Arbitrum Foundation | Arbitrum Foundation - Marketing Strategy & Operations Lead | Remote - Cayman Islands |  | Marketing Strategy, Arbitrum, Team Leadership +2 | 10d | [Apply](https://wagey.gg/jobs/3ed42f1c5baeeaa7-arbitrum-foundation-marketing-strategy-operations-lead-at-arbitrum-foundation?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=c3a788dc844eca07" alt="" height="20"> VerSprite | Senior Full-Stack Software Developer | Remote |  | Full Stack | 10d | [Apply](https://wagey.gg/jobs/59b102f875b290cc-senior-full-stack-software-developer-at-versprite?ref=github) |
@@ -560,25 +560,25 @@ Remote jobs with no location restriction.
 
 | Company | Role | Location | Salary | Skills | Age | Apply |
 |---------|------|----------|--------|--------|-----|-------|
-| The Browser Company | Technical Lead, Developer Experience | Remote - ET (Eastern) |  |  | 9h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| The Browser Company | Technical Lead, Developer Experience | Remote - ET (Eastern) |  |  | 10h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | Nansen.ai | Head of BD Staking | Remote - NYC area, Remote |  | Storytelling, Business Development, B2B +11 | 10h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | Stellar Development Foundation | Senior Manager, Government Relations | Washington D.C. |  | Government Relations, Team Leadership, Public Relations +2 | 10h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=dbeb1c32b66fd771" alt="" height="20"> Mozilla | Staff Designer | Remote - USA |  | Learning & Development, Front-end, Mentoring +1 | 10h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_903ad12b73cf199e" alt="" height="20"> voldex | Marketing Specialist, Growth - Brookhaven | Remote - PT (Pacific) |  | Content Creation, CTR, Reporting | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_903ad12b73cf199e" alt="" height="20"> voldex | Marketing Specialist, Growth - Driving Empire | Remote - CT (Central) |  | Content Creation, Dashboard Creation, Google Sheets +4 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_903ad12b73cf199e" alt="" height="20"> voldex | FP&A Manager | Remote - ET (Eastern) |  | Budget Forecasting, Google Sheets, Excel +8 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_903ad12b73cf199e" alt="" height="20"> voldex | Render Artist - NFL Universe Football | Remote - PT (Pacific) |  | Render, Monday.com, Asana +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_903ad12b73cf199e" alt="" height="20"> voldex | Software Engineer - Brookhaven | Remote - ET (Eastern) |  | AWS, Lua, Snowflake +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_903ad12b73cf199e" alt="" height="20"> voldex | UGC Artist - NFL Universe Football | Remote - PT (Pacific) |  | Monday.com, Asana, Jira +1 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| august | Growth Marketing Manager | Remote - New York \| Remote - USA * |  | SQL, Python, JavaScript +8 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_2fcd9c703a7b40cf" alt="" height="20"> summation | Account Executive | Remote - Bellevue, WA; Remote |  | Team Management, Product Marketing, Enterprise Sales +6 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| august | Full-Stack GTM Engineer | Remote - New York \| Remote - USA * |  | SQL, Python, JavaScript +17 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Voldex Games | Marketing Specialist, Growth - Brookhaven | Remote - PT (Pacific) |  | Content Creation, CTR, Reporting | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Voldex Games | Marketing Specialist, Growth - Driving Empire | Remote - CT (Central) |  | Content Creation, Dashboard Creation, Google Sheets +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Voldex Games | FP&A Manager | Remote - ET (Eastern) |  | Budget Forecasting, Google Sheets, Excel +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Voldex Games | Render Artist - NFL Universe Football | Remote - PT (Pacific) |  | Render, Monday.com, Asana +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Voldex Games | Software Engineer - Brookhaven | Remote - ET (Eastern) |  | AWS, Lua, Snowflake +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Voldex Games | UGC Artist - NFL Universe Football | Remote - PT (Pacific) |  | Monday.com, Asana, Jira +1 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| august | Growth Marketing Manager | Remote - New York \| Remote - USA * |  | SQL, Python, JavaScript +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=co_2fcd9c703a7b40cf" alt="" height="20"> summation | Account Executive | Bellevue, Washington, United States |  | Team Management, Product Marketing, Enterprise Sales +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| august | Full-Stack GTM Engineer | Remote - New York \| Remote - USA * |  | SQL, Python, JavaScript +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | Valo Health | Staff Data Scientist, Graph ML | Remote - Lexington, Massachusetts, United States; Remote |  | Data Visualization, Python, Dask +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | Sand Tech Holdings Limited | Global Marketing Manager | USA - Hybrid |  | Product Marketing, B2B, Staff Development +6 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | Higher Logic | AI & Community Strategy Intern | Remote - US-Remote |  | Product Marketing, Customer Engagement, Documentation +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_50c6a2f5d608f7f9" alt="" height="20"> Lillio | Customer Support Associate - Payments | Remote - ET (Eastern) |  |  | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_47d66729653b2b73" alt="" height="20"> decilegroup | Head of Investor Relations (Remote) | Remote - Palo Alto |  | Outreach, Data Analysis, Product Marketing +4 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=co_50c6a2f5d608f7f9" alt="" height="20"> Lillio | Controller | Remote - Canada, Remote |  | Reporting, Decision Making, MRR +10 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=co_50c6a2f5d608f7f9" alt="" height="20"> Lillio | Lillio (formerly HiMama) - Customer Support Associate | Remote - Canada, Remote |  | Customer Success | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=co_47d66729653b2b73" alt="" height="20"> decilegroup | Decile Group - Head of Investor Relations | Remote - Palo Alto |  | Outreach, Data Analysis, Product Marketing +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=co_50c6a2f5d608f7f9" alt="" height="20"> Lillio | Lillio (formerly HiMama) | Remote - Canada, Remote |  | Reporting, Decision Making, MRR +2 | 12h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | Sei Development Foundation | Chief Operating Officer | Remote - New York, New York, United States |  | Team Management, Team Leadership, Governance | 16h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | FIRST Global Brand Experience Agency | Analytics Lead | Hybrid - USA * |  | Python, Data Analysis, Storytelling +1 | 16h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=9aeab829e2726699" alt="" height="20"> Spotify | Spotify - Senior Staff Machine Learning Engineer | New York, NY |  | Java, JAX, Python +2 | 16h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
@@ -616,17 +616,17 @@ Remote jobs with no location restriction.
 | <img src="https://wagey.gg/api/company-logo?id=dee64dc0a2c9f3ad" alt="" height="20"> Webflow | Front-End Engineer, Subscriptions & Payments | Remote - CA Remote (BC & ON only); U.S. Remote |  | React, JavaScript, TypeScript +2 | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=dbeb1c32b66fd771" alt="" height="20"> Mozilla | Staff Designer | Remote - USA |  | Learning & Development, Front-end, Mentoring +1 | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=co_639857b4be4c5aea" alt="" height="20"> AppDirect | Platform Developer, Stealth Start-Up Company | Montreal, Quebec |  | Azure, AWS, GCP +2 | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| Stellar Development Foundation | Product Manager, Privacy | Remote - USA * |  | Smart Contracts, Business Development | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| Stellar Development Foundation | Senior Developer Advocate | New York - Hybrid - USA * |  | Documentation, Technical Writing, EVM +2 | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| Anchorage Digital | Anchorage Digital - Engineering Manager, Blockchain | Remote - United States |  | Team Management, Coaching, Performance Management +2 | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| Anchorage Digital | Anchorage Digital - Member of Compliance, Financial Crimes Compliance Data Analytics | Remote - United States |  | Reporting, Data Analysis, Git +2 | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=6ed48e1366344f40" alt="" height="20"> TRM Labs | Senior Technical Recruiter | Remote - PT (Pacific) |  | Market Research, Outreach, Slack +2 | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=22275a7b7a6e33ba" alt="" height="20"> Clutch | Senior Customer Success Manager, Enterprise at Clutch | Remote - USA |  | Customer Success, Customer Onboarding, B2B +1 | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=30424453e285515b" alt="" height="20"> Supabase | Billing Support Specialist (EMEA) at Supabase | Remote - Anywhere - USA * |  | SQL | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| Crypto.com | Finance Trust Officer | Chicago, Illinois |  | Office Management, Reporting, Financial Reporting +2 | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| Crypto.com | Crypto.com - Product Director, Banking Engagement | United States |  | Cross-selling, MAU, Rails +2 | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=b97f147a1754d11e" alt="" height="20"> Camunda | VP Accounting (Corporate Controller)  at Camunda | Remote - USA |  | KPI Tracking, Reporting, Succession Planning +2 | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| Istari Digital | Istari Digital - Digital Engineering Manager | Remote - Anywhere |  | Team Leadership, Team Management, Executive Support +2 | 22h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Stellar Development Foundation | Product Manager, Privacy | Remote - USA * |  | Smart Contracts, Business Development | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Stellar Development Foundation | Senior Developer Advocate | New York - Hybrid - USA * |  | Documentation, Technical Writing, EVM +2 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Anchorage Digital | Anchorage Digital - Engineering Manager, Blockchain | Remote - United States |  | Team Management, Coaching, Performance Management +2 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Anchorage Digital | Anchorage Digital - Member of Compliance, Financial Crimes Compliance Data Analytics | Remote - United States |  | Reporting, Data Analysis, Git +2 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=6ed48e1366344f40" alt="" height="20"> TRM Labs | Senior Technical Recruiter | Remote - PT (Pacific) |  | Market Research, Outreach, Slack +2 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=22275a7b7a6e33ba" alt="" height="20"> Clutch | Senior Customer Success Manager, Enterprise at Clutch | Remote - USA |  | Customer Success, Customer Onboarding, B2B +1 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=30424453e285515b" alt="" height="20"> Supabase | Billing Support Specialist (EMEA) at Supabase | Remote - Anywhere - USA * |  | SQL | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Crypto.com | Finance Trust Officer | Chicago, Illinois |  | Office Management, Reporting, Financial Reporting +2 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Crypto.com | Crypto.com - Product Director, Banking Engagement | United States |  | Cross-selling, MAU, Rails +2 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=b97f147a1754d11e" alt="" height="20"> Camunda | VP Accounting (Corporate Controller)  at Camunda | Remote - USA |  | KPI Tracking, Reporting, Succession Planning +2 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
+| Istari Digital | Istari Digital - Digital Engineering Manager | Remote - Anywhere |  | Team Leadership, Team Management, Executive Support +2 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=b5a8a3f63ee429fb" alt="" height="20"> FanDuel | Open Positions | Hybrid - USA * |  |  | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=29b4f42526383a31" alt="" height="20"> MoonPay | IT Engineer | United States - Remote / New York - Hybrid - Hybrid |  | Bash, PowerShell, Python +2 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | FIS® Amount™ | Mid-Market Sales Executive (Multiple US Geo territories open) | Remote US - Hybrid |  | Product Marketing, Business Development, Close +1 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
@@ -662,7 +662,7 @@ Remote jobs with no location restriction.
 | Chainlink Labs | Junior Data Engineer, Economics | Remote - ET (Eastern) |  | AWS, GCP, Azure +2 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | Anchorage Digital | Anchorage Digital - Member of Product Marketing, Trading | Remote - United States |  | Copywriting, Product Marketing, Digital Marketing | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
 | Banyan Software | AI Factory Team Lead | Toronto, Ontario, Canada - Hybrid |  | hypothesis, AWS, Coaching +2 | 23h | [wagey Pro](https://wagey.gg/pricing?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=a2d5bc9cdd0da08b" alt="" height="20"> ClinChoice | Clinical Project Manager II | Remote - United States, Remote |  | GCP, Reporting, Risk Management +4 | 1d | [Apply](https://wagey.gg/jobs/1c0a39e1aaf0155e-clinical-project-manager-ii-at-clinchoice?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=a2d5bc9cdd0da08b" alt="" height="20"> ClinChoice | Clinical Project Manager II | Remote - United States, Remote |  | GCP, Reporting, Risk Management +2 | 1d | [Apply](https://wagey.gg/jobs/1c0a39e1aaf0155e-clinical-project-manager-ii-at-clinchoice?ref=github) |
 | Wealthsimple Technologies | Senior Advisor, Wealth Management | Remote - Canada | $500k/year | CFP, CPA | 1d | [Apply](https://wagey.gg/jobs/e6645241ecfe7356-senior-advisor-wealth-management-at-wealthsimple-technologies?ref=github) |
 | Wealthsimple Technologies | Advisor, Digital Advice | Remote - Canada | $100k - $125k | CFA | 1d | [Apply](https://wagey.gg/jobs/0601303e663871ff-advisor-digital-advice-at-wealthsimple-technologies?ref=github) |
 | Wealthsimple Technologies | Senior Analytics Developer, Brokerage & Ledger Product Data Science | Remote - Canada | $151k - $189k | Documentation, Data Quality, Reporting +2 | 1d | [Apply](https://wagey.gg/jobs/e027627a2dbc9013-senior-analytics-developer-brokerage-ledger-product-data-science-at-wealthsimple?ref=github) |
@@ -1374,10 +1374,10 @@ Remote jobs with no location restriction.
 | Bluelight Consulting | Bluelight Consulting - DevOps Engineer - Remote, Latin America | Remote - Heredia, Costa Rica |  | Helm, Chef, Ansible +2 | 9d | [Apply](https://wagey.gg/jobs/ec343f912d3ca9db-bluelight-consulting-devops-engineer-remote-latin-america-at-bluelight-consultin?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=2ec078174e380c14" alt="" height="20"> 3Pillar | Python Technical Lead | Remote - Costa Rica |  | AWS, Docker, Python +2 | 9d | [Apply](https://wagey.gg/jobs/12700c27d13ea258-python-technical-lead-at-3pillar?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=05ddfa6fa917e703" alt="" height="20"> InvestorFlow | DevOps Engineer | Remote - Santo Domingo |  | Terraform, Azure, Grafana +2 | 9d | [Apply](https://wagey.gg/jobs/eea3dd96c8bde05f-devops-engineer-at-investorflow?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=02641f076b0cc3a1" alt="" height="20"> Twilio | Manager, Toll-Free Onboarding Operations | Remote - Colombia |  | Coaching, Team Management, Team Leadership +2 | 9d | [Apply](https://wagey.gg/jobs/7baf247fcef5b80a-manager-toll-free-onboarding-operations-at-twilio?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=02641f076b0cc3a1" alt="" height="20"> Twilio | Account Executive 4 | Remote - Brazil |  | Product Marketing, B2B, Prospecting +2 | 9d | [Apply](https://wagey.gg/jobs/4b22e0361b0057a2-account-executive-4-at-twilio?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=1c6e29ed8a875ca6" alt="" height="20"> Praxent | LATAM Senior Software Engineer (Angular & .NET) | Remote - International - Latin America * |  | REST, Angular, .NET +2 | 9d | [Apply](https://wagey.gg/jobs/adf19bf872acf2b8-latam-senior-software-engineer-angular-net-at-praxent?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=547d4588770ce9de" alt="" height="20"> KnowBe4 | Cloud Security Engineer (Remote) Position located in Brazil) | Remote - São Paulo, Brazil |  | AWS, Dashboard Creation, Terraform | 9d | [Apply](https://wagey.gg/jobs/1ac33ed61d8b3cdb-cloud-security-engineer-remote-position-located-in-brazil-at-knowbe4?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=02641f076b0cc3a1" alt="" height="20"> Twilio | Manager, Toll-Free Onboarding Operations | Remote - Colombia |  | Coaching, Team Management, Team Leadership +2 | 10d | [Apply](https://wagey.gg/jobs/7baf247fcef5b80a-manager-toll-free-onboarding-operations-at-twilio?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=02641f076b0cc3a1" alt="" height="20"> Twilio | Account Executive 4 | Remote - Brazil |  | Product Marketing, B2B, Prospecting +2 | 10d | [Apply](https://wagey.gg/jobs/4b22e0361b0057a2-account-executive-4-at-twilio?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=1c6e29ed8a875ca6" alt="" height="20"> Praxent | LATAM Senior Software Engineer (Angular & .NET) | Remote - International - Latin America * |  | REST, Angular, .NET +2 | 10d | [Apply](https://wagey.gg/jobs/adf19bf872acf2b8-latam-senior-software-engineer-angular-net-at-praxent?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=547d4588770ce9de" alt="" height="20"> KnowBe4 | Cloud Security Engineer (Remote) Position located in Brazil) | Remote - São Paulo, Brazil |  | AWS, Dashboard Creation, Terraform | 10d | [Apply](https://wagey.gg/jobs/1ac33ed61d8b3cdb-cloud-security-engineer-remote-position-located-in-brazil-at-knowbe4?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=b9ece37636371497" alt="" height="20"> rackspace | Rackspace - Cloud Business Consultant - | Remote - Mexico - Jalisco - Remote |  | Account Management, Reporting, Documentation +2 | 10d | [Apply](https://wagey.gg/jobs/72a544e135eeec38-rackspace-cloud-business-consultant-at-rackspace?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=41842da483738074" alt="" height="20"> JetBridge | JetBridge - Forward Deployed Engineer | Remote (Latin America, Europe) - Hybrid - Latin America * |  | Content Creation, React, TypeScript +2 | 10d | [Apply](https://wagey.gg/jobs/bc3620b607150bec-jetbridge-forward-deployed-engineer-at-jetbridge?ref=github) |
 | Affiliate BD | Binance - Binance Accelerator Program | UAE, Dubai / Argentina, Buenos Aires / Mexico, Mexico City / Brazil, Sao Paulo / South Africa, Cape Town / Ghana, Accra / Kenya, Nairobi |  | Campaign Management, Reporting, Product Marketing +2 | 10d | [Apply](https://wagey.gg/jobs/68d3474ef7a99529-binance-binance-accelerator-program-at-affiliate-bd?ref=github) |
@@ -1581,7 +1581,7 @@ Remote jobs with no location restriction.
 
 ## Other Regions
 
-- [**Europe & Middle East**](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs) — 6,400 jobs
+- [**Europe & Middle East**](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs) — 6,375 jobs
 - [**Asia-Pacific**](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs) — 2,167 jobs
 
 ---

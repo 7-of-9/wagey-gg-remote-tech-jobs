@@ -457,18 +457,37 @@ async function main() {
   }
   console.log(`  TOTAL: ${jobs.length} jobs`);
 
+  // Headline stats for commit messages
+  const totalSalary = jobs.filter(j => j.salaryMin || j.salaryMax || j.salary).length;
+  const totalVerified = jobs.filter(j => j.verifiedAt).length;
+  const teaserCount = jobs.filter(j => j.visibility === 'teaser').length;
+  const now = fmtDateTime(new Date().toISOString());
+  const emeaCount = (groups.EMEA || []).length;
+  const apacCount = (groups.APAC || []).length;
+
+  const mainMsg = `${jobs.length.toLocaleString()} jobs | ${totalSalary.toLocaleString()} with salary | ${totalVerified.toLocaleString()} verified | ${teaserCount} Pro teasers — ${now}`;
+  const emeaMsg = `${emeaCount.toLocaleString()} EMEA jobs | ${(groups.EMEA || []).filter(j => j.salaryMin || j.salaryMax || j.salary).length.toLocaleString()} with salary | ${(groups.EMEA || []).filter(j => j.verifiedAt).length.toLocaleString()} verified — ${now}`;
+  const apacMsg = `${apacCount.toLocaleString()} APAC jobs | ${(groups.APAC || []).filter(j => j.salaryMin || j.salaryMax || j.salary).length.toLocaleString()} with salary | ${(groups.APAC || []).filter(j => j.verifiedAt).length.toLocaleString()} verified — ${now}`;
+
   console.log('\n--- Main repo ---');
   writeFile(join(REPOS.main, 'README.md'), mainReadme(groups, jobs, logos));
   writeFile(join(REPOS.main, 'data', 'jobs.json'), JSON.stringify(buildDataJson(jobs), null, 2));
+  writeFile(join(REPOS.main, 'data', 'commit-msg.txt'), mainMsg);
 
   console.log('\n--- EMEA repo ---');
   writeFile(join(REPOS.emea, 'README.md'), regionReadme('EMEA', 'Europe & Middle East', groups.EMEA || [], groups, logos));
   writeFile(join(REPOS.emea, 'data', 'jobs.json'), JSON.stringify(buildDataJson(groups.EMEA || []), null, 2));
+  writeFile(join(REPOS.emea, 'data', 'commit-msg.txt'), emeaMsg);
 
   console.log('\n--- APAC repo ---');
   writeFile(join(REPOS.apac, 'README.md'), regionReadme('APAC', 'Asia-Pacific', groups.APAC || [], groups, logos));
   writeFile(join(REPOS.apac, 'data', 'jobs.json'), JSON.stringify(buildDataJson(groups.APAC || []), null, 2));
+  writeFile(join(REPOS.apac, 'data', 'commit-msg.txt'), apacMsg);
 
+  console.log(`\nCommit messages:`);
+  console.log(`  Main: ${mainMsg}`);
+  console.log(`  EMEA: ${emeaMsg}`);
+  console.log(`  APAC: ${apacMsg}`);
   console.log('\nDone!');
 }
 
