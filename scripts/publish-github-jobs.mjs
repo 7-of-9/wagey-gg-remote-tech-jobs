@@ -254,15 +254,8 @@ function applyCell(job) {
   return `[Apply](${jobUrl(job)})`;
 }
 
-/** Filter out garbage jobs (non-job pages that slipped through) */
-function isRealJob(job) {
-  const title = (job.title || '').toLowerCase();
-  const garbage = ['job openings', 'careers', 'career', 'jobs at', 'open positions'];
-  return !garbage.some(g => title === g || title.startsWith(g + ' at'));
-}
-
 function jobTable(jobs, logos, limit = 500) {
-  const sorted = sortJobs(jobs).filter(isRealJob).slice(0, limit);
+  const sorted = sortJobs(jobs).slice(0, limit);
   if (sorted.length === 0) return '*No jobs currently listed.*\n';
 
   const lines = [
@@ -271,9 +264,10 @@ function jobTable(jobs, logos, limit = 500) {
   ];
 
   for (const job of sorted) {
-    const company = companyCell(job, logos);
+    const isTeaser = job.visibility === 'teaser';
+    const company = isTeaser ? '\u{1F512} \u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591' : companyCell(job, logos);
     const role = fmtRole(job.title);
-    const salary = job.visibility === 'teaser' ? '' : fmtSalary(job);
+    const salary = fmtSalary(job);
     const age = fmtAge(job.scrapedAt);
     const link = applyCell(job);
     lines.push(`| ${company} | ${role} | ${salary} | ${age} | ${link} |`);
@@ -304,7 +298,11 @@ function mainReadme(groups, allJobs, logos) {
   const totalVerified = allJobs.filter(j => j.verifiedAt).length;
   const now = fmtDateTime(new Date().toISOString());
 
-  const topJobs = sortJobs(allJobs).slice(0, 20);
+  // Top Jobs: sorted by hotness score (best jobs first), exclude teasers from hero
+  const topJobs = allJobs
+    .filter(j => j.visibility !== 'teaser')
+    .sort((a, b) => (b.hotScore || 0) - (a.hotScore || 0))
+    .slice(0, 20);
 
   return `# Remote Tech Jobs — Updated Hourly
 
@@ -408,21 +406,25 @@ ${regionCode !== 'EMEA' ? `- [**Europe & Middle East**](https://github.com/7-of-
 // ============================================================================
 
 function buildDataJson(jobs) {
-  return jobs.map(j => ({
-    id: j.id,
-    title: j.title,
-    company: j.company,
-    region: j.region,
-    salary: fmtSalary(j),
-    salaryMin: j.salaryMin || null,
-    salaryMax: j.salaryMax || null,
-    skills: parseSkills(j.skills),
-    seniority: j.seniority || null,
-    ats: j.ats || null,
-    verifiedAt: j.verifiedAt || null,
-    scrapedAt: j.scrapedAt || null,
-    url: jobUrl(j),
-  }));
+  return jobs.map(j => {
+    const isTeaser = j.visibility === 'teaser';
+    return {
+      id: j.id,
+      title: j.title,
+      company: isTeaser ? null : j.company,
+      region: j.region,
+      salary: fmtSalary(j),
+      salaryMin: j.salaryMin || null,
+      salaryMax: j.salaryMax || null,
+      skills: parseSkills(j.skills),
+      seniority: j.seniority || null,
+      ats: j.ats || null,
+      verifiedAt: j.verifiedAt || null,
+      scrapedAt: j.scrapedAt || null,
+      url: isTeaser ? null : jobUrl(j),
+      visibility: j.visibility || 'full',
+    };
+  });
 }
 
 // ============================================================================
