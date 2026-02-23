@@ -339,10 +339,7 @@ function mainReadme(groups, allJobs, logos) {
 
   return `# Remote Tech Jobs — Updated Hourly
 
-> **This list is updated every hour.** Every job is checked against the employer's live careers page.
-> Every job can be applied to in one click at [wagey.gg](https://wagey.gg?ref=${REF}).
->
-> The intention is no dead links. I try to check at least once a day.
+> Every job is checked against the employer's live careers page. Every job can be applied to in one click at [wagey.gg](https://wagey.gg?ref=${REF}).
 
 ## Jobs by Region
 
@@ -401,8 +398,7 @@ function regionReadme(regionCode, regionLabel, jobs, allGroups, logos) {
 
   return `# Remote Tech Jobs — ${regionLabel} — Updated Hourly
 
-> **This list is updated every hour.** Every job is checked against the employer's live careers page.
-> Every job can be applied to in one click at [wagey.gg](https://wagey.gg?ref=${REF}).
+> Every job is checked against the employer's live careers page. Every job can be applied to in one click at [wagey.gg](https://wagey.gg?ref=${REF}).
 
 | | Jobs | With Salary | Verified |
 |--|------|-------------|----------|
