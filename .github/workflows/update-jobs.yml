@@ -45,7 +45,7 @@ jobs:
           cd wagey-gg-remote-tech-jobs
           git config user.name "wagey-bot"
           git config user.email "bot@wagey.gg"
-          git add -A
+          git add README.md data/
           git diff --cached --quiet || git commit -m "Update job listings — $(date -u +'%d-%b-%Y')"
           git push
 
@@ -54,7 +54,7 @@ jobs:
           cd wagey-gg-remote-tech-emea-jobs
           git config user.name "wagey-bot"
           git config user.email "bot@wagey.gg"
-          git add -A
+          git add README.md data/
           git diff --cached --quiet || git commit -m "Update job listings — $(date -u +'%d-%b-%Y')"
           git push
 
@@ -63,6 +63,6 @@ jobs:
           cd wagey-gg-remote-tech-apac-jobs
           git config user.name "wagey-bot"
           git config user.email "bot@wagey.gg"
-          git add -A
+          git add README.md data/
           git diff --cached --quiet || git commit -m "Update job listings — $(date -u +'%d-%b-%Y')"
           git push
