@@ -238,6 +238,14 @@ function companyCell(job, logos) {
   return name;
 }
 
+/** Build the Apply cell based on visibility tier */
+function applyCell(job) {
+  if (job.visibility === 'teaser') {
+    return `[wagey Pro](https://wagey.gg/pricing?ref=${REF})`;
+  }
+  return `[Apply](${jobUrl(job)})`;
+}
+
 function jobTable(jobs, logos, limit = 500) {
   const sorted = sortJobs(jobs).slice(0, limit);
   if (sorted.length === 0) return '*No jobs currently listed.*\n';
@@ -251,10 +259,10 @@ function jobTable(jobs, logos, limit = 500) {
     const company = companyCell(job, logos);
     const title = esc(job.title);
     const location = esc(fmtLocation(job));
-    const salary = fmtSalary(job);
+    const salary = job.visibility === 'teaser' ? '' : fmtSalary(job);
     const skills = esc(topSkills(job));
     const age = fmtAge(job.scrapedAt);
-    const link = `[Apply](${jobUrl(job)})`;
+    const link = applyCell(job);
     lines.push(`| ${company} | ${title} | ${location} | ${salary} | ${skills} | ${age} | ${link} |`);
   }
 
@@ -285,9 +293,9 @@ function mainReadme(groups, allJobs, logos) {
 
   const topJobs = sortJobs(allJobs).slice(0, 20);
 
-  return `# Remote Tech Jobs — Verified Daily, Apply in One Click
+  return `# Remote Tech Jobs — Updated Hourly
 
-> Every job on this list is checked against the employer's live careers page.
+> **This list is updated every hour.** Every job is checked against the employer's live careers page.
 > Every job can be applied to in one click at [wagey.gg](https://wagey.gg?ref=${REF}).
 >
 > The intention is no dead links. I try to check at least once a day.
@@ -347,7 +355,7 @@ ${jobTable(groups.LATAM, logos)}
 
 ---
 
-*Updated automatically every day at 06:00 UTC. Powered by [wagey.gg](https://wagey.gg?ref=${REF}).*
+*Updated automatically every hour. Powered by [wagey.gg](https://wagey.gg?ref=${REF}).*
 `;
 }
 
@@ -357,9 +365,9 @@ function regionReadme(regionCode, regionLabel, jobs, allGroups, logos) {
   const verified = jobs.filter(j => j.verifiedAt).length;
   const now = fmtDateTime(new Date().toISOString());
 
-  return `# Remote Tech Jobs — ${regionLabel}
+  return `# Remote Tech Jobs — ${regionLabel} — Updated Hourly
 
-> Every job on this list is checked against the employer's live careers page.
+> **This list is updated every hour.** Every job is checked against the employer's live careers page.
 > Every job can be applied to in one click at [wagey.gg](https://wagey.gg?ref=${REF}).
 
 | | Jobs | With Salary | Verified |
@@ -378,7 +386,7 @@ ${jobTable(jobs, logos)}
 ${regionCode !== 'EMEA' ? `- [**Europe & Middle East**](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs) — ${(allGroups.EMEA?.length || 0).toLocaleString()} jobs\n` : ''}${regionCode !== 'APAC' ? `- [**Asia-Pacific**](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs) — ${(allGroups.APAC?.length || 0).toLocaleString()} jobs\n` : ''}
 ---
 
-*Updated automatically every day at 06:00 UTC. Powered by [wagey.gg](https://wagey.gg?ref=${REF}).*
+*Updated automatically every hour. Powered by [wagey.gg](https://wagey.gg?ref=${REF}).*
 `;
 }
 

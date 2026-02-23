@@ -2,7 +2,7 @@ name: Update Job Listings
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Daily at 06:00 UTC
+    - cron: '0 * * * *'  # Every hour, on the hour
   workflow_dispatch: {}    # Manual trigger
 
 jobs:
@@ -38,7 +38,7 @@ jobs:
         env:
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
           SYSTEM_USER_ID: ${{ secrets.SYSTEM_USER_ID }}
-        run: node wagey-gg-remote-tech-jobs/scripts/update.mjs
+        run: node wagey-gg-remote-tech-jobs/scripts/publish-github-jobs.mjs
 
       - name: Commit and push main repo
         run: |
@@ -46,7 +46,7 @@ jobs:
           git config user.name "wagey-bot"
           git config user.email "bot@wagey.gg"
           git add README.md data/
-          git diff --cached --quiet || git commit -m "Update job listings — $(date -u +'%d-%b-%Y')"
+          git diff --cached --quiet || git commit -m "Update job listings — $(date -u +'%d-%b-%Y %H:%M UTC')"
           git push
 
       - name: Commit and push EMEA repo
@@ -55,7 +55,7 @@ jobs:
           git config user.name "wagey-bot"
           git config user.email "bot@wagey.gg"
           git add README.md data/
-          git diff --cached --quiet || git commit -m "Update job listings — $(date -u +'%d-%b-%Y')"
+          git diff --cached --quiet || git commit -m "Update job listings — $(date -u +'%d-%b-%Y %H:%M UTC')"
           git push
 
       - name: Commit and push APAC repo
@@ -64,5 +64,5 @@ jobs:
           git config user.name "wagey-bot"
           git config user.email "bot@wagey.gg"
           git add README.md data/
-          git diff --cached --quiet || git commit -m "Update job listings — $(date -u +'%d-%b-%Y')"
+          git diff --cached --quiet || git commit -m "Update job listings — $(date -u +'%d-%b-%Y %H:%M UTC')"
           git push
