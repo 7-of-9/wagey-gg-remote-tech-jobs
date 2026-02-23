@@ -267,8 +267,11 @@ function jobTable(jobs, logos, limit = 500) {
     const isTeaser = job.visibility === 'teaser';
     const company = isTeaser ? '\u{1F512} \u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591' : companyCell(job, logos);
     const roleTitle = fmtRole(job.title);
-    const loc = job.location ? ` <br><sub>${esc(job.location).slice(0, 40)}</sub>` : '';
-    const role = roleTitle + loc;
+    // Debug: show location, remote flag, region under role
+    const remote = job.isRemote ? '\u{1F310}' : '\u{1F3E2}';  // 🌐 remote, 🏢 in-office
+    const loc = esc(job.location || 'Unknown').slice(0, 35);
+    const debug = ` <br><sub>${remote} ${loc} \u2022 ${job.region || '?'}</sub>`;
+    const role = roleTitle + debug;
     const salary = fmtSalary(job);
     const age = fmtAge(job.scrapedAt);
     const link = applyCell(job);
