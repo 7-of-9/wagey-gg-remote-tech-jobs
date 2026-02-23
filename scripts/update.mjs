@@ -65,12 +65,10 @@ function fmtDate(dateStr) {
 
 /** Format salary for display — prefer human-readable string, fall back to numeric range */
 function fmtSalary(job) {
-  // Prefer the human-readable salary string (handles hourly, GBP, EUR, etc.)
   if (job.salary) {
     const s = job.salary.trim();
     return s.length > 35 ? s.slice(0, 32) + '...' : s;
   }
-  // Fall back to numeric range (annual USD)
   if (job.salaryMin && job.salaryMax && job.salaryMin === job.salaryMax) {
     return fmtK(job.salaryMin);
   }
@@ -121,7 +119,8 @@ function esc(str) {
 // ============================================================================
 
 async function fetchJobs() {
-  const url = `${API_BASE}/api/matching-data?hours=168`; // 7 days
+  // Use a large hours value to get ALL applyable jobs, not just recent ones
+  const url = `${API_BASE}/api/matching-data?hours=8760`;
   console.log(`Fetching from ${url} ...`);
 
   const resp = await fetch(url, {
@@ -130,8 +129,6 @@ async function fetchJobs() {
       'Accept': 'application/x-ndjson',
       'Accept-Encoding': 'gzip',
     },
-    // Allow self-signed certs for local dev
-    ...(API_BASE.includes('localhost') ? { dispatcher: undefined } : {}),
   });
 
   if (!resp.ok) {
@@ -151,7 +148,6 @@ async function fetchJobs() {
     } else if (obj.type === 'job') {
       jobs.push(obj.d);
     }
-    // 'done' line ignored
   }
 
   console.log(`Fetched ${jobs.length} jobs`);
@@ -169,7 +165,7 @@ function groupByRegion(jobs) {
     if (groups[region]) {
       groups[region].push(job);
     } else {
-      groups.WW.push(job); // Unknown regions → WW
+      groups.WW.push(job);
     }
   }
   return groups;
@@ -178,7 +174,6 @@ function groupByRegion(jobs) {
 /** Clamp salary to reasonable annual range (ignore annualized hourly rates) */
 function salarySort(job) {
   const v = job.salaryMax || job.salaryMin || 0;
-  // Cap at $600k — anything higher is likely an annualized hourly rate
   return v > 600000 ? 0 : v;
 }
 
@@ -187,11 +182,9 @@ function sortJobs(jobs) {
   return [...jobs].sort((a, b) => {
     const aSal = salarySort(a);
     const bSal = salarySort(b);
-    // Jobs with salary first
     if (aSal && !bSal) return -1;
     if (!aSal && bSal) return 1;
     if (aSal !== bSal) return bSal - aSal;
-    // Then by recency
     return new Date(b.scrapedAt).getTime() - new Date(a.scrapedAt).getTime();
   });
 }
@@ -215,7 +208,7 @@ function jobTable(jobs, limit = 500) {
     const salary = fmtSalary(job);
     const skills = esc(topSkills(job));
     const verified = job.verifiedAt ? `✓ ${fmtDate(job.verifiedAt)}` : '';
-    const link = `[Apply →](${jobUrl(job)})`;
+    const link = `[Apply](${jobUrl(job)})`;
     lines.push(`| ${company} | ${title} | ${salary} | ${skills} | ${verified} | ${link} |`);
   }
 
@@ -245,28 +238,16 @@ function mainReadme(groups, allJobs) {
   const salaryPct = totalJobs > 0 ? Math.round(totalSalary / totalJobs * 100) : 0;
   const today = fmtDate(new Date().toISOString());
 
-  // Top 20 jobs across all regions for the hero table
   const topJobs = sortJobs(allJobs).slice(0, 20);
 
   return `# Remote Tech Jobs — Verified Daily, Apply in One Click
 
-> Every job on this list has been verified against the employer's live careers page.
+> Every job on this list is checked against the employer's live careers page.
 > Every job can be applied to in one click at [wagey.gg](https://wagey.gg?ref=${REF}).
 >
-> No dead links. No guessing. Just real jobs you can apply to right now.
+> The intention is no dead links. I try to check at least once a day.
 
 **${totalJobs.toLocaleString()}** live jobs | **${salaryPct}%** with salary data | **${totalVerified.toLocaleString()}** verified | Updated ${today}
-
-## Why This List Is Different
-
-| | This list | Other GitHub job lists |
-|---|---|---|
-| Jobs verified live | ✓ Daily | ✗ |
-| One-click apply | ✓ via [wagey.gg](https://wagey.gg?ref=${REF}) | ✗ |
-| Salary data | ${salaryPct}% of jobs | ~0% |
-| Regions | Global (5 regions) | US-only |
-| Skills tagged | ✓ (1,000+ skills) | ✗ |
-| Seniority levels | Junior → C-level | Intern/new-grad only |
 
 ## Jobs by Region
 
@@ -274,17 +255,18 @@ function mainReadme(groups, allJobs) {
 |--------|------|-------------|----------|--------|
 ${stats.map(s => {
   let link;
-  if (s.code === 'EMEA') link = '[View jobs →](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs)';
-  else if (s.code === 'APAC') link = '[View jobs →](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs)';
-  else link = `[View below ↓](#${s.label.toLowerCase().replace(/[^a-z0-9]+/g, '-')})`;
+  if (s.code === 'EMEA') link = '[View jobs](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs)';
+  else if (s.code === 'APAC') link = '[View jobs](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs)';
+  else link = `[View below](#${s.label.toLowerCase().replace(/[^a-z0-9]+/g, '-')})`;
   return `| ${s.label} | ${s.total.toLocaleString()} | ${s.withSalary.toLocaleString()} | ${s.verified.toLocaleString()} | ${link} |`;
 }).join('\n')}
+| **Total** | **${totalJobs.toLocaleString()}** | **${totalSalary.toLocaleString()}** | **${totalVerified.toLocaleString()}** | |
 
-## Today's Top Jobs
+## Top Jobs
 
 ${jobTable(topJobs, 20)}
 
-> Want smart matching to YOUR skills? Upload your CV at [wagey.gg](https://wagey.gg?ref=${REF}) →
+> Upload your CV at [wagey.gg](https://wagey.gg?ref=${REF}) for smart matching and one-click apply.
 
 ---
 
@@ -310,15 +292,15 @@ ${jobTable(groups.LATAM)}
 
 ## How It Works
 
-1. **We scrape** thousands of job boards, company career pages, and ATS platforms daily
-2. **We verify** every job is still live on the employer's site — dead links are removed automatically
-3. **We tag** each job with skills, seniority, salary, and region using AI extraction
-4. **You apply** in one click via [wagey.gg](https://wagey.gg?ref=${REF}) — upload your CV once, then auto-apply to any job
+1. **Scrape** thousands of job boards, company career pages, and ATS platforms daily
+2. **Verify** every job is still live on the employer's site — dead links are removed automatically
+3. **Tag** each job with skills, seniority, salary, and region using AI extraction
+4. **Apply** in one click via [wagey.gg](https://wagey.gg?ref=${REF}) — upload your CV once, then auto-apply to any job
 
 ## Other Regions
 
-- [**Europe & Middle East →**](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs) — ${(groups.EMEA?.length || 0).toLocaleString()} jobs
-- [**Asia-Pacific →**](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs) — ${(groups.APAC?.length || 0).toLocaleString()} jobs
+- [**Europe & Middle East**](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs) — ${(groups.EMEA?.length || 0).toLocaleString()} jobs
+- [**Asia-Pacific**](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs) — ${(groups.APAC?.length || 0).toLocaleString()} jobs
 
 ---
 
@@ -335,7 +317,7 @@ function regionReadme(regionCode, regionLabel, jobs, allGroups) {
 
   return `# Remote Tech Jobs — ${regionLabel}
 
-> Every job on this list has been verified against the employer's live careers page.
+> Every job on this list is checked against the employer's live careers page.
 > Every job can be applied to in one click at [wagey.gg](https://wagey.gg?ref=${REF}).
 
 **${totalJobs.toLocaleString()}** live jobs | **${salaryPct}%** with salary data | **${verified.toLocaleString()}** verified | Updated ${today}
@@ -344,12 +326,12 @@ function regionReadme(regionCode, regionLabel, jobs, allGroups) {
 
 ${jobTable(jobs)}
 
-> Upload your CV at [wagey.gg](https://wagey.gg?ref=${REF}) for smart job matching and one-click apply →
+> Upload your CV at [wagey.gg](https://wagey.gg?ref=${REF}) for smart matching and one-click apply.
 
 ## Other Regions
 
-- [**All regions (main list) →**](https://github.com/7-of-9/wagey-gg-remote-tech-jobs)
-${regionCode !== 'EMEA' ? `- [**Europe & Middle East →**](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs) — ${(allGroups.EMEA?.length || 0).toLocaleString()} jobs\n` : ''}${regionCode !== 'APAC' ? `- [**Asia-Pacific →**](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs) — ${(allGroups.APAC?.length || 0).toLocaleString()} jobs\n` : ''}
+- [**All regions (main list)**](https://github.com/7-of-9/wagey-gg-remote-tech-jobs)
+${regionCode !== 'EMEA' ? `- [**Europe & Middle East**](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs) — ${(allGroups.EMEA?.length || 0).toLocaleString()} jobs\n` : ''}${regionCode !== 'APAC' ? `- [**Asia-Pacific**](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs) — ${(allGroups.APAC?.length || 0).toLocaleString()} jobs\n` : ''}
 ---
 
 *Updated automatically every day at 06:00 UTC. Powered by [wagey.gg](https://wagey.gg?ref=${REF}).*
@@ -411,7 +393,6 @@ async function main() {
 
   const groups = groupByRegion(jobs);
 
-  // Stats
   console.log('\nRegion breakdown:');
   for (const [code, label] of Object.entries(REGION_LABELS)) {
     const g = groups[code] || [];
@@ -419,18 +400,16 @@ async function main() {
     const ver = g.filter(j => j.verifiedAt).length;
     console.log(`  ${label}: ${g.length} jobs (${sal} with salary, ${ver} verified)`);
   }
+  console.log(`  TOTAL: ${jobs.length} jobs`);
 
-  // Main repo: README + data
   console.log('\n--- Main repo ---');
   writeFile(join(REPOS.main, 'README.md'), mainReadme(groups, jobs));
   writeFile(join(REPOS.main, 'data', 'jobs.json'), JSON.stringify(buildDataJson(jobs), null, 2));
 
-  // EMEA repo
   console.log('\n--- EMEA repo ---');
   writeFile(join(REPOS.emea, 'README.md'), regionReadme('EMEA', 'Europe & Middle East', groups.EMEA || [], groups));
   writeFile(join(REPOS.emea, 'data', 'jobs.json'), JSON.stringify(buildDataJson(groups.EMEA || []), null, 2));
 
-  // APAC repo
   console.log('\n--- APAC repo ---');
   writeFile(join(REPOS.apac, 'README.md'), regionReadme('APAC', 'Asia-Pacific', groups.APAC || [], groups));
   writeFile(join(REPOS.apac, 'data', 'jobs.json'), JSON.stringify(buildDataJson(groups.APAC || []), null, 2));
