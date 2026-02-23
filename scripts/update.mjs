@@ -171,45 +171,80 @@ function groupByRegion(jobs) {
   return groups;
 }
 
-/** Clamp salary to reasonable annual range (ignore annualized hourly rates) */
+/** Sort value for salary — deprioritize hourly rates and cap outliers */
 function salarySort(job) {
   const v = job.salaryMax || job.salaryMin || 0;
+  // Hourly rates have misleadingly high annualized values — sort them after annual salaries
+  if (job.salary && /\/hour/i.test(job.salary)) return 0;
+  // Cap at $600k — anything higher is likely bad data
   return v > 600000 ? 0 : v;
 }
 
-/** Sort: salary DESC (jobs with salary first), then by scrapedAt DESC */
+/** Sort: freshness (most recently scraped first) */
 function sortJobs(jobs) {
   return [...jobs].sort((a, b) => {
-    const aSal = salarySort(a);
-    const bSal = salarySort(b);
-    if (aSal && !bSal) return -1;
-    if (!aSal && bSal) return 1;
-    if (aSal !== bSal) return bSal - aSal;
     return new Date(b.scrapedAt).getTime() - new Date(a.scrapedAt).getTime();
   });
+}
+
+/** Human-readable age string from a date */
+function fmtAge(dateStr) {
+  if (!dateStr) return '';
+  const ms = Date.now() - new Date(dateStr).getTime();
+  const hours = Math.floor(ms / (1000 * 60 * 60));
+  if (hours < 1) return '<1h';
+  if (hours < 24) return `${hours}h`;
+  const days = Math.floor(hours / 24);
+  if (days === 1) return '1d';
+  return `${days}d`;
+}
+
+/** Format location — prefer x_loc (e.g. "Remote, United Kingdom"), fall back to region code */
+function fmtLocation(job) {
+  if (job.location) return job.location;
+  if (job.region) return REGION_LABELS[job.region] || job.region;
+  return '';
 }
 
 // ============================================================================
 // MARKDOWN GENERATION
 // ============================================================================
 
-function jobTable(jobs, limit = 500) {
+/** Normalize company name to match companyLogos keys */
+function normalizeName(name) {
+  return (name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+/** Build company cell with logo if available */
+function companyCell(job, logos) {
+  const name = esc(job.company);
+  const normalized = normalizeName(job.company);
+  const logoId = logos[normalized];
+  if (logoId) {
+    const logoUrl = `https://wagey.gg/api/company-logo?id=${encodeURIComponent(logoId)}`;
+    return `<img src="${logoUrl}" alt="" height="20"> ${name}`;
+  }
+  return name;
+}
+
+function jobTable(jobs, logos, limit = 500) {
   const sorted = sortJobs(jobs).slice(0, limit);
   if (sorted.length === 0) return '*No jobs currently listed.*\n';
 
   const lines = [
-    '| Company | Role | Salary | Skills | Verified | Apply |',
-    '|---------|------|--------|--------|----------|-------|',
+    '| Company | Role | Location | Salary | Skills | Age | Apply |',
+    '|---------|------|----------|--------|--------|-----|-------|',
   ];
 
   for (const job of sorted) {
-    const company = esc(job.company);
+    const company = companyCell(job, logos);
     const title = esc(job.title);
+    const location = esc(fmtLocation(job));
     const salary = fmtSalary(job);
     const skills = esc(topSkills(job));
-    const verified = job.verifiedAt ? `✓ ${fmtDate(job.verifiedAt)}` : '';
+    const age = fmtAge(job.scrapedAt);
     const link = `[Apply](${jobUrl(job)})`;
-    lines.push(`| ${company} | ${title} | ${salary} | ${skills} | ${verified} | ${link} |`);
+    lines.push(`| ${company} | ${title} | ${location} | ${salary} | ${skills} | ${age} | ${link} |`);
   }
 
   return lines.join('\n') + '\n';
@@ -230,7 +265,7 @@ function regionStats(groups) {
 // README TEMPLATES
 // ============================================================================
 
-function mainReadme(groups, allJobs) {
+function mainReadme(groups, allJobs, logos) {
   const stats = regionStats(groups);
   const totalJobs = allJobs.length;
   const totalSalary = allJobs.filter(j => j.salaryMin || j.salaryMax || j.salary).length;
@@ -264,7 +299,7 @@ ${stats.map(s => {
 
 ## Top Jobs
 
-${jobTable(topJobs, 20)}
+${jobTable(topJobs, logos, 20)}
 
 > Upload your CV at [wagey.gg](https://wagey.gg?ref=${REF}) for smart matching and one-click apply.
 
@@ -274,19 +309,19 @@ ${jobTable(topJobs, 20)}
 
 Remote jobs with no location restriction.
 
-${jobTable(groups.WW)}
+${jobTable(groups.WW, logos)}
 
 ---
 
 ## North America
 
-${jobTable(groups.NA)}
+${jobTable(groups.NA, logos)}
 
 ---
 
 ## Latin America
 
-${jobTable(groups.LATAM)}
+${jobTable(groups.LATAM, logos)}
 
 ---
 
@@ -308,7 +343,7 @@ ${jobTable(groups.LATAM)}
 `;
 }
 
-function regionReadme(regionCode, regionLabel, jobs, allGroups) {
+function regionReadme(regionCode, regionLabel, jobs, allGroups, logos) {
   const totalJobs = jobs.length;
   const withSalary = jobs.filter(j => j.salaryMin || j.salaryMax || j.salary).length;
   const verified = jobs.filter(j => j.verifiedAt).length;
@@ -324,7 +359,7 @@ function regionReadme(regionCode, regionLabel, jobs, allGroups) {
 
 ## Jobs
 
-${jobTable(jobs)}
+${jobTable(jobs, logos)}
 
 > Upload your CV at [wagey.gg](https://wagey.gg?ref=${REF}) for smart matching and one-click apply.
 
@@ -384,12 +419,15 @@ async function main() {
   console.log(`User: ${USER_ID}`);
   console.log(`Dry run: ${DRY_RUN}\n`);
 
-  const { jobs } = await fetchJobs();
+  const { jobs, meta } = await fetchJobs();
 
   if (jobs.length === 0) {
     console.error('No jobs fetched — aborting');
     process.exit(1);
   }
+
+  const logos = (meta && meta.companyLogos) || {};
+  console.log(`Company logos: ${Object.keys(logos).length} companies with logos`);
 
   const groups = groupByRegion(jobs);
 
@@ -403,15 +441,15 @@ async function main() {
   console.log(`  TOTAL: ${jobs.length} jobs`);
 
   console.log('\n--- Main repo ---');
-  writeFile(join(REPOS.main, 'README.md'), mainReadme(groups, jobs));
+  writeFile(join(REPOS.main, 'README.md'), mainReadme(groups, jobs, logos));
   writeFile(join(REPOS.main, 'data', 'jobs.json'), JSON.stringify(buildDataJson(jobs), null, 2));
 
   console.log('\n--- EMEA repo ---');
-  writeFile(join(REPOS.emea, 'README.md'), regionReadme('EMEA', 'Europe & Middle East', groups.EMEA || [], groups));
+  writeFile(join(REPOS.emea, 'README.md'), regionReadme('EMEA', 'Europe & Middle East', groups.EMEA || [], groups, logos));
   writeFile(join(REPOS.emea, 'data', 'jobs.json'), JSON.stringify(buildDataJson(groups.EMEA || []), null, 2));
 
   console.log('\n--- APAC repo ---');
-  writeFile(join(REPOS.apac, 'README.md'), regionReadme('APAC', 'Asia-Pacific', groups.APAC || [], groups));
+  writeFile(join(REPOS.apac, 'README.md'), regionReadme('APAC', 'Asia-Pacific', groups.APAC || [], groups, logos));
   writeFile(join(REPOS.apac, 'data', 'jobs.json'), JSON.stringify(buildDataJson(groups.APAC || []), null, 2));
 
   console.log('\nDone!');
