@@ -63,6 +63,17 @@ function fmtDate(dateStr) {
   return `${d.getUTCDate()}-${months[d.getUTCMonth()]}-${d.getUTCFullYear()}`;
 }
 
+/** Format date+time as d-Mon-YYYY HH:MM UTC */
+function fmtDateTime(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return '';
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const hh = String(d.getUTCHours()).padStart(2, '0');
+  const mm = String(d.getUTCMinutes()).padStart(2, '0');
+  return `${d.getUTCDate()}-${months[d.getUTCMonth()]}-${d.getUTCFullYear()} ${hh}:${mm} UTC`;
+}
+
 /** Format salary for display — prefer human-readable string, fall back to numeric range */
 function fmtSalary(job) {
   if (job.salary) {
@@ -270,8 +281,7 @@ function mainReadme(groups, allJobs, logos) {
   const totalJobs = allJobs.length;
   const totalSalary = allJobs.filter(j => j.salaryMin || j.salaryMax || j.salary).length;
   const totalVerified = allJobs.filter(j => j.verifiedAt).length;
-  const salaryPct = totalJobs > 0 ? Math.round(totalSalary / totalJobs * 100) : 0;
-  const today = fmtDate(new Date().toISOString());
+  const now = fmtDateTime(new Date().toISOString());
 
   const topJobs = sortJobs(allJobs).slice(0, 20);
 
@@ -281,8 +291,6 @@ function mainReadme(groups, allJobs, logos) {
 > Every job can be applied to in one click at [wagey.gg](https://wagey.gg?ref=${REF}).
 >
 > The intention is no dead links. I try to check at least once a day.
-
-**${totalJobs.toLocaleString()}** live jobs | **${salaryPct}%** with salary data | **${totalVerified.toLocaleString()}** verified | Updated ${today}
 
 ## Jobs by Region
 
@@ -295,7 +303,7 @@ ${stats.map(s => {
   else link = `[View below](#${s.label.toLowerCase().replace(/[^a-z0-9]+/g, '-')})`;
   return `| ${s.label} | ${s.total.toLocaleString()} | ${s.withSalary.toLocaleString()} | ${s.verified.toLocaleString()} | ${link} |`;
 }).join('\n')}
-| **Total** | **${totalJobs.toLocaleString()}** | **${totalSalary.toLocaleString()}** | **${totalVerified.toLocaleString()}** | |
+| **Total as of ${now}** | **${totalJobs.toLocaleString()}** | **${totalSalary.toLocaleString()}** | **${totalVerified.toLocaleString()}** | |
 
 ## Top Jobs
 
@@ -347,15 +355,16 @@ function regionReadme(regionCode, regionLabel, jobs, allGroups, logos) {
   const totalJobs = jobs.length;
   const withSalary = jobs.filter(j => j.salaryMin || j.salaryMax || j.salary).length;
   const verified = jobs.filter(j => j.verifiedAt).length;
-  const salaryPct = totalJobs > 0 ? Math.round(withSalary / totalJobs * 100) : 0;
-  const today = fmtDate(new Date().toISOString());
+  const now = fmtDateTime(new Date().toISOString());
 
   return `# Remote Tech Jobs — ${regionLabel}
 
 > Every job on this list is checked against the employer's live careers page.
 > Every job can be applied to in one click at [wagey.gg](https://wagey.gg?ref=${REF}).
 
-**${totalJobs.toLocaleString()}** live jobs | **${salaryPct}%** with salary data | **${verified.toLocaleString()}** verified | Updated ${today}
+| | Jobs | With Salary | Verified |
+|--|------|-------------|----------|
+| **${regionLabel} as of ${now}** | **${totalJobs.toLocaleString()}** | **${withSalary.toLocaleString()}** | **${verified.toLocaleString()}** |
 
 ## Jobs
 
