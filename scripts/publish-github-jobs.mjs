@@ -74,18 +74,16 @@ function fmtDateTime(dateStr) {
   return `${d.getUTCDate()}-${months[d.getUTCMonth()]}-${d.getUTCFullYear()} ${hh}:${mm} UTC`;
 }
 
-/** Format salary for display — prefer human-readable string, fall back to numeric range */
+/** Format salary for display — always use annualized numeric values */
 function fmtSalary(job) {
-  if (job.salary) {
-    const s = job.salary.trim();
-    return s.length > 35 ? s.slice(0, 32) + '...' : s;
-  }
   if (job.salaryMin && job.salaryMax && job.salaryMin === job.salaryMax) {
-    return fmtK(job.salaryMin);
+    return `${fmtK(job.salaryMin)}/year`;
   }
   if (job.salaryMin && job.salaryMax) {
-    return `${fmtK(job.salaryMin)}–${fmtK(job.salaryMax)}`;
+    return `${fmtK(job.salaryMin)}–${fmtK(job.salaryMax)}/year`;
   }
+  if (job.salaryMin) return `${fmtK(job.salaryMin)}+/year`;
+  if (job.salaryMax) return `${fmtK(job.salaryMax)}/year`;
   return '';
 }
 
