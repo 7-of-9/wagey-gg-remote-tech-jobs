@@ -266,8 +266,8 @@ function jobTable(jobs, logos, limit = 500) {
   if (sorted.length === 0) return '*No jobs currently listed.*\n';
 
   const lines = [
-    '| Company | Role | Salary | Age | |',
-    '|---------|------|--------|-----|---|',
+    '| Company | Role | Salary USD | Age | |',
+    '|---------|------|------------|-----|---|',
   ];
 
   for (const job of sorted) {
@@ -321,11 +321,11 @@ function mainReadme(groups, allJobs, logos) {
     const jobs = groups[code] || [];
     const sal = jobs.filter(j => j.salaryMin || j.salaryMax || j.salary).length;
     const ver = jobs.filter(j => j.verifiedAt).length;
-    let link;
-    if (code === 'EMEA') link = '[View jobs](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs)';
-    else if (code === 'APAC') link = '[View jobs](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs)';
-    else link = `[View below](#${label.toLowerCase().replace(/[^a-z0-9]+/g, '-')})`;
-    return `| ${label} | ${jobs.length.toLocaleString()} | ${sal.toLocaleString()} | ${ver.toLocaleString()} | ${link} |`;
+    let linkedLabel;
+    if (code === 'EMEA') linkedLabel = `[${label}](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs)`;
+    else if (code === 'APAC') linkedLabel = `[${label}](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs)`;
+    else linkedLabel = `[${label}](#${code.toLowerCase()})`;
+    return `| ${linkedLabel} | ${jobs.length.toLocaleString()} | ${sal.toLocaleString()} | ${ver.toLocaleString()} |`;
   }
 
   /* Top Jobs section — commented out for now, may revisit
@@ -341,16 +341,16 @@ function mainReadme(groups, allJobs, logos) {
 
 ## Jobs by Region
 
-| Region | Jobs | With Salary | Verified | Browse |
-|--------|------|-------------|----------|--------|
+| Region | Jobs | With Salary | Verified |
+|--------|------|-------------|----------|
 ${regionOrder.map(c => regionRow(c)).join('\n')}
-| **Total as of ${now}** | **${totalJobs.toLocaleString()}** | **${totalSalary.toLocaleString()}** | **${totalVerified.toLocaleString()}** | |
+| **Total as of ${now}** | **${totalJobs.toLocaleString()}** | **${totalSalary.toLocaleString()}** | **${totalVerified.toLocaleString()}** |
 
 > Upload your CV at [wagey.gg](https://wagey.gg?ref=${REF}) for smart matching and one-click apply.
 
 ---
 
-## Remote Worldwide (${(groups.WW?.length || 0).toLocaleString()})
+## <a id="ww"></a>Remote Worldwide (${(groups.WW?.length || 0).toLocaleString()})
 
 True remote — no location restriction.
 
@@ -358,13 +358,13 @@ ${jobTable(groups.WW, logos)}
 
 ---
 
-## North America (${(groups.NA?.length || 0).toLocaleString()})
+## <a id="na"></a>North America (${(groups.NA?.length || 0).toLocaleString()})
 
 ${jobTable(groups.NA, logos)}
 
 ---
 
-## Latin America (${(groups.LATAM?.length || 0).toLocaleString()})
+## <a id="latam"></a>Latin America (${(groups.LATAM?.length || 0).toLocaleString()})
 
 ${jobTable(groups.LATAM, logos)}
 
