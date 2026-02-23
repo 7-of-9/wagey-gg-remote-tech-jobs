@@ -266,7 +266,9 @@ function jobTable(jobs, logos, limit = 500) {
   for (const job of sorted) {
     const isTeaser = job.visibility === 'teaser';
     const company = isTeaser ? '\u{1F512} \u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591' : companyCell(job, logos);
-    const role = fmtRole(job.title);
+    const roleTitle = fmtRole(job.title);
+    const loc = job.location ? ` <br><sub>${esc(job.location).slice(0, 40)}</sub>` : '';
+    const role = roleTitle + loc;
     const salary = fmtSalary(job);
     const age = fmtAge(job.scrapedAt);
     const link = applyCell(job);
@@ -292,17 +294,34 @@ function regionStats(groups) {
 // ============================================================================
 
 function mainReadme(groups, allJobs, logos) {
-  const stats = regionStats(groups);
   const totalJobs = allJobs.length;
   const totalSalary = allJobs.filter(j => j.salaryMin || j.salaryMax || j.salary).length;
   const totalVerified = allJobs.filter(j => j.verifiedAt).length;
   const now = fmtDateTime(new Date().toISOString());
 
-  // Top Jobs: sorted by hotness score (best jobs first), exclude teasers from hero
+  // Region stats — on-page first (WW, NA, LATAM), off-page last (EMEA, APAC)
+  const onPage = ['WW', 'NA', 'LATAM'];
+  const offPage = ['EMEA', 'APAC'];
+  const regionOrder = [...onPage, ...offPage];
+
+  function regionRow(code) {
+    const label = REGION_LABELS[code];
+    const jobs = groups[code] || [];
+    const sal = jobs.filter(j => j.salaryMin || j.salaryMax || j.salary).length;
+    const ver = jobs.filter(j => j.verifiedAt).length;
+    let link;
+    if (code === 'EMEA') link = '[View jobs](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs)';
+    else if (code === 'APAC') link = '[View jobs](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs)';
+    else link = `[View below](#${label.toLowerCase().replace(/[^a-z0-9]+/g, '-')})`;
+    return `| ${label} | ${jobs.length.toLocaleString()} | ${sal.toLocaleString()} | ${ver.toLocaleString()} | ${link} |`;
+  }
+
+  /* Top Jobs section — commented out for now, may revisit
   const topJobs = allJobs
     .filter(j => j.visibility !== 'teaser')
     .sort((a, b) => (b.hotScore || 0) - (a.hotScore || 0))
     .slice(0, 20);
+  */
 
   return `# Remote Tech Jobs — Updated Hourly
 
@@ -315,24 +334,14 @@ function mainReadme(groups, allJobs, logos) {
 
 | Region | Jobs | With Salary | Verified | Browse |
 |--------|------|-------------|----------|--------|
-${stats.map(s => {
-  let link;
-  if (s.code === 'EMEA') link = '[View jobs](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs)';
-  else if (s.code === 'APAC') link = '[View jobs](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs)';
-  else link = `[View below](#${s.label.toLowerCase().replace(/[^a-z0-9]+/g, '-')})`;
-  return `| ${s.label} | ${s.total.toLocaleString()} | ${s.withSalary.toLocaleString()} | ${s.verified.toLocaleString()} | ${link} |`;
-}).join('\n')}
+${regionOrder.map(c => regionRow(c)).join('\n')}
 | **Total as of ${now}** | **${totalJobs.toLocaleString()}** | **${totalSalary.toLocaleString()}** | **${totalVerified.toLocaleString()}** | |
-
-## Top Jobs
-
-${jobTable(topJobs, logos, 20)}
 
 > Upload your CV at [wagey.gg](https://wagey.gg?ref=${REF}) for smart matching and one-click apply.
 
 ---
 
-## Worldwide
+## Worldwide (${(groups.WW?.length || 0).toLocaleString()})
 
 Remote jobs with no location restriction.
 
@@ -340,13 +349,13 @@ ${jobTable(groups.WW, logos)}
 
 ---
 
-## North America
+## North America (${(groups.NA?.length || 0).toLocaleString()})
 
 ${jobTable(groups.NA, logos)}
 
 ---
 
-## Latin America
+## Latin America (${(groups.LATAM?.length || 0).toLocaleString()})
 
 ${jobTable(groups.LATAM, logos)}
 
