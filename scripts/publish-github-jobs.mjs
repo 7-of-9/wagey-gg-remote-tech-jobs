@@ -113,12 +113,18 @@ function topSkills(job, n = 3) {
 
 /** Region code to human label */
 const REGION_LABELS = {
-  WW: 'Worldwide',
+  WW: 'Remote Worldwide',
   EMEA: 'Europe & Middle East',
   APAC: 'Asia-Pacific',
   NA: 'North America',
   LATAM: 'Latin America',
 };
+
+/** Client-side garbage title filter — catches nonjobs that slipped through API */
+const GARBAGE_TITLES = /^(careers?|job\s+openings?|open\s+positions?|positions?|current\s+(job\s+)?openings?|join\s+our\s+team|work\s+(with|at|for)\s+us)$/i;
+function isGarbageJob(job) {
+  return GARBAGE_TITLES.test((job.title || '').trim());
+}
 
 /** Escape pipe characters in markdown table cells */
 function esc(str) {
@@ -172,11 +178,14 @@ async function fetchJobs() {
 function groupByRegion(jobs) {
   const groups = { WW: [], EMEA: [], APAC: [], NA: [], LATAM: [] };
   for (const job of jobs) {
+    if (isGarbageJob(job)) continue;  // Client-side garbage filter
     const region = job.region || 'WW';
-    if (groups[region]) {
+    if (region === 'WW') {
+      // WW section = true remote only (isRemote=true AND region=WW)
+      if (job.isRemote) groups.WW.push(job);
+      // Non-remote WW jobs are excluded (no section for them)
+    } else if (groups[region]) {
       groups[region].push(job);
-    } else {
-      groups.WW.push(job);
     }
   }
   return groups;
@@ -269,8 +278,10 @@ function jobTable(jobs, logos, limit = 500) {
     const roleTitle = fmtRole(job.title);
     // Debug: show location, remote flag, region under role
     const remote = job.isRemote ? '\u{1F310}' : '\u{1F3E2}';  // 🌐 remote, 🏢 in-office
-    const loc = esc(job.location || 'Unknown').slice(0, 35);
-    const debug = ` <br><sub>${remote} ${loc} \u2022 ${job.region || '?'}</sub>`;
+    const rawLoc = (job.location || '').trim();
+    const loc = (!rawLoc || /^unknown/i.test(rawLoc)) ? '' : esc(rawLoc).slice(0, 35);
+    const locPart = loc ? `${loc} \u2022 ` : '';
+    const debug = ` <br><sub>${remote} ${locPart}${job.region || '?'}</sub>`;
     const role = roleTitle + debug;
     const salary = fmtSalary(job);
     const age = fmtAge(job.scrapedAt);
@@ -344,9 +355,9 @@ ${regionOrder.map(c => regionRow(c)).join('\n')}
 
 ---
 
-## Worldwide (${(groups.WW?.length || 0).toLocaleString()})
+## Remote Worldwide (${(groups.WW?.length || 0).toLocaleString()})
 
-Remote jobs with no location restriction.
+True remote — no location restriction.
 
 ${jobTable(groups.WW, logos)}
 
