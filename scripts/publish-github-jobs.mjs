@@ -226,44 +226,57 @@ function normalizeName(name) {
   return (name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
-/** Build company cell with logo if available */
+/** Placeholder logo URL — transparent 1px PNG from our API */
+const PLACEHOLDER_LOGO = 'https://wagey.gg/api/company-logo?name=_placeholder';
+
+/** Build company cell — logo for all (placeholder if missing), truncate long names */
 function companyCell(job, logos) {
-  const name = esc(job.company);
+  const name = esc(job.company).slice(0, 25);
   const normalized = normalizeName(job.company);
   const logoId = logos[normalized];
-  if (logoId) {
-    const logoUrl = `https://wagey.gg/api/company-logo?id=${encodeURIComponent(logoId)}`;
-    return `<img src="${logoUrl}" alt="" height="20"> ${name}`;
-  }
-  return name;
+  const logoUrl = logoId
+    ? `https://wagey.gg/api/company-logo?id=${encodeURIComponent(logoId)}`
+    : PLACEHOLDER_LOGO;
+  return `<img src="${logoUrl}" alt="" height="16"> ${name}`;
+}
+
+/** Truncate role title */
+function fmtRole(title) {
+  const t = esc(title);
+  return t.length > 40 ? t.slice(0, 37) + '...' : t;
 }
 
 /** Build the Apply cell based on visibility tier */
 function applyCell(job) {
   if (job.visibility === 'teaser') {
-    return `[wagey Pro](https://wagey.gg/pricing?ref=${REF})`;
+    return `[Pro](https://wagey.gg/pricing?ref=${REF})`;
   }
   return `[Apply](${jobUrl(job)})`;
 }
 
+/** Filter out garbage jobs (non-job pages that slipped through) */
+function isRealJob(job) {
+  const title = (job.title || '').toLowerCase();
+  const garbage = ['job openings', 'careers', 'career', 'jobs at', 'open positions'];
+  return !garbage.some(g => title === g || title.startsWith(g + ' at'));
+}
+
 function jobTable(jobs, logos, limit = 500) {
-  const sorted = sortJobs(jobs).slice(0, limit);
+  const sorted = sortJobs(jobs).filter(isRealJob).slice(0, limit);
   if (sorted.length === 0) return '*No jobs currently listed.*\n';
 
   const lines = [
-    '| Company | Role | Location | Salary | Skills | Age | Apply |',
-    '|---------|------|----------|--------|--------|-----|-------|',
+    '| Company | Role | Salary | Age | |',
+    '|---------|------|--------|-----|---|',
   ];
 
   for (const job of sorted) {
     const company = companyCell(job, logos);
-    const title = esc(job.title);
-    const location = esc(fmtLocation(job));
+    const role = fmtRole(job.title);
     const salary = job.visibility === 'teaser' ? '' : fmtSalary(job);
-    const skills = esc(topSkills(job));
     const age = fmtAge(job.scrapedAt);
     const link = applyCell(job);
-    lines.push(`| ${company} | ${title} | ${location} | ${salary} | ${skills} | ${age} | ${link} |`);
+    lines.push(`| ${company} | ${role} | ${salary} | ${age} | ${link} |`);
   }
 
   return lines.join('\n') + '\n';
