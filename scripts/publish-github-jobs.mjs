@@ -134,7 +134,8 @@ function esc(str) {
 // ============================================================================
 
 const MAX_RETRIES = 5;
-const INITIAL_DELAY_MS = 3000; // 3s, 6s, 12s, 24s, 48s
+const INITIAL_DELAY_MS = 3000; // 3s, 6s, 12s, 24s
+const FETCH_TIMEOUT_MS = 360_000; // 6 minutes — endpoint streams ~24 MB NDJSON slowly on Azure B1
 
 async function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -154,7 +155,7 @@ async function fetchJobs() {
           'Accept': 'application/x-ndjson',
           'Accept-Encoding': 'gzip',
         },
-        signal: AbortSignal.timeout(120_000), // 2 minute timeout per attempt
+        signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
       });
 
       if (!resp.ok) {
