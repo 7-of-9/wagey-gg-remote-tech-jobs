@@ -378,6 +378,18 @@ ${regionOrder.map(c => regionRow(c)).join('\n')}
 
 > Upload your CV at [wagey.gg](https://wagey.gg?ref=${REF}) for smart matching and one-click apply.
 
+## How It Works
+
+1. **Scrape** thousands of job boards, company career pages, and ATS platforms daily
+2. **Verify** every job is still live on the employer's site — dead links are removed automatically
+3. **Tag** each job with skills, seniority, salary, and region using AI extraction
+4. **Apply** in one click via [wagey.gg](https://wagey.gg?ref=${REF}) — upload your CV once, then auto-apply to any job
+
+## Other Regions
+
+- [**Europe & Middle East**](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs) — ${(groups.EMEA?.length || 0).toLocaleString()} jobs
+- [**Asia-Pacific**](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs) — ${(groups.APAC?.length || 0).toLocaleString()} jobs
+
 ---
 
 ## <a id="ww"></a>Remote Worldwide (${(groups.WW?.length || 0).toLocaleString()})
@@ -397,20 +409,6 @@ ${jobTable(groups.NA, logos)}
 ## <a id="latam"></a>Latin America (${(groups.LATAM?.length || 0).toLocaleString()})
 
 ${jobTable(groups.LATAM, logos)}
-
----
-
-## How It Works
-
-1. **Scrape** thousands of job boards, company career pages, and ATS platforms daily
-2. **Verify** every job is still live on the employer's site — dead links are removed automatically
-3. **Tag** each job with skills, seniority, salary, and region using AI extraction
-4. **Apply** in one click via [wagey.gg](https://wagey.gg?ref=${REF}) — upload your CV once, then auto-apply to any job
-
-## Other Regions
-
-- [**Europe & Middle East**](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs) — ${(groups.EMEA?.length || 0).toLocaleString()} jobs
-- [**Asia-Pacific**](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs) — ${(groups.APAC?.length || 0).toLocaleString()} jobs
 
 ---
 
