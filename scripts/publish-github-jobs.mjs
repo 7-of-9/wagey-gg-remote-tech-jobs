@@ -294,7 +294,8 @@ function fmtRole(title) {
 /** Build the Apply cell based on visibility tier */
 function applyCell(job) {
   if (job.visibility === 'teaser') {
-    return `[\u{1F512} Pro](https://wagey.gg/pricing?ref=${REF})`;
+    // Padlock outside link (no underline), non-breaking space keeps it on one line
+    return `\u{1F512}\u00A0[Pro](https://wagey.gg/pricing?ref=${REF})`;
   }
   return `[Apply](${jobUrl(job)})`;
 }
@@ -320,7 +321,7 @@ function jobTable(jobs, logos, limit = 500) {
 
   for (const job of sorted) {
     const isTeaser = job.visibility === 'teaser';
-    const company = isTeaser ? `\u{1F512} ${teaserMask(job)}` : companyCell(job, logos);
+    const company = isTeaser ? teaserMask(job) : companyCell(job, logos);
     const roleTitle = fmtRole(job.title);
     // Debug: show location, remote flag, region under role
     const remote = job.isRemote ? '\u{1F310}' : '\u{1F3E2}';  // 🌐 remote, 🏢 in-office
@@ -633,7 +634,7 @@ async function main() {
   const emeaCount = (groups.EMEA || []).length;
   const apacCount = (groups.APAC || []).length;
 
-  const mainMsg = `${jobs.length.toLocaleString()} jobs | ${totalSalary.toLocaleString()} with salary | ${totalVerified.toLocaleString()} verified | ${teaserCount} Pro teasers — ${now}`;
+  const mainMsg = `${jobs.length.toLocaleString()} jobs | ${totalSalary.toLocaleString()} with salary | ${totalVerified.toLocaleString()} verified | ${teaserCount.toLocaleString()} for Pro members — ${now}`;
   const emeaMsg = `${emeaCount.toLocaleString()} EMEA jobs | ${(groups.EMEA || []).filter(j => j.salaryMin || j.salaryMax || j.salary).length.toLocaleString()} with salary | ${(groups.EMEA || []).filter(j => j.verifiedAt).length.toLocaleString()} verified — ${now}`;
   const apacMsg = `${apacCount.toLocaleString()} APAC jobs | ${(groups.APAC || []).filter(j => j.salaryMin || j.salaryMax || j.salary).length.toLocaleString()} with salary | ${(groups.APAC || []).filter(j => j.verifiedAt).length.toLocaleString()} verified — ${now}`;
 
