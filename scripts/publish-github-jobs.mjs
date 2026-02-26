@@ -428,6 +428,8 @@ function buildHistoryTable() {
 
   return `## Update History
 
+Last ${rows.length} updates. Full history in each repo's [commit log](${GITHUB_REPOS.main}/commits/main/).
+
 | Time (UTC) | Main | EMEA | APAC |
 |---|---|---|---|
 ${rows.join('\n')}
