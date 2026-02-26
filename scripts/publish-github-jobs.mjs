@@ -20,6 +20,7 @@
 import { writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -37,6 +38,12 @@ const REPOS = {
   main: ROOT,
   emea: join(ROOT, '..', 'wagey-gg-remote-tech-emea-jobs'),
   apac: join(ROOT, '..', 'wagey-gg-remote-tech-apac-jobs'),
+};
+
+const GITHUB_REPOS = {
+  main: 'https://github.com/7-of-9/wagey-gg-remote-tech-jobs',
+  emea: 'https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs',
+  apac: 'https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs',
 };
 
 // ============================================================================
@@ -287,9 +294,19 @@ function fmtRole(title) {
 /** Build the Apply cell based on visibility tier */
 function applyCell(job) {
   if (job.visibility === 'teaser') {
-    return `[Pro](https://wagey.gg/pricing?ref=${REF})`;
+    return `[\u{1F512} Pro](https://wagey.gg/pricing?ref=${REF})`;
   }
   return `[Apply](${jobUrl(job)})`;
+}
+
+/** Deterministic varying-length mask for teaser company names */
+function teaserMask(job) {
+  // Simple hash from job title to get a number 4-12
+  let h = 0;
+  const s = job.title || job.id || '';
+  for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+  const len = 4 + (Math.abs(h) % 9); // 4 to 12 blocks
+  return '\u2591'.repeat(len);
 }
 
 function jobTable(jobs, logos, limit = 500) {
@@ -303,7 +320,7 @@ function jobTable(jobs, logos, limit = 500) {
 
   for (const job of sorted) {
     const isTeaser = job.visibility === 'teaser';
-    const company = isTeaser ? '\u{1F512} \u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591' : companyCell(job, logos);
+    const company = isTeaser ? `\u{1F512} ${teaserMask(job)}` : companyCell(job, logos);
     const roleTitle = fmtRole(job.title);
     // Debug: show location, remote flag, region under role
     const remote = job.isRemote ? '\u{1F310}' : '\u{1F3E2}';  // 🌐 remote, 🏢 in-office
@@ -333,10 +350,94 @@ function regionStats(groups) {
 }
 
 // ============================================================================
+// UPDATE HISTORY (git log across all 3 repos)
+// ============================================================================
+
+const HISTORY_LIMIT = 42;
+
+/** Read git log from a repo directory, return [{hash, date, message}] */
+function readGitLog(repoPath, limit) {
+  try {
+    const raw = execSync(
+      `git log --format="%H|%aI|%s" -${limit}`,
+      { cwd: repoPath, encoding: 'utf-8', timeout: 10000 }
+    ).trim();
+    if (!raw) return [];
+    return raw.split('\n').map(line => {
+      const [hash, date, ...msgParts] = line.split('|');
+      return { hash, date, message: msgParts.join('|') };
+    });
+  } catch {
+    return [];
+  }
+}
+
+/** Extract job count from commit message like "21,024 jobs | ..." */
+function extractJobCount(message) {
+  const m = message.match(/([\d,]+)\s+(EMEA |APAC )?jobs/);
+  return m ? m[1] : null;
+}
+
+/** Extract timestamp from commit message like "... — 26-Feb-2026 04:35 UTC" */
+function extractTimestamp(message) {
+  const m = message.match(/(\d{1,2}-\w{3}-\d{4}\s+\d{2}:\d{2}\s+UTC)/);
+  return m ? m[1] : null;
+}
+
+/** Build the cross-repo update history markdown table */
+function buildHistoryTable() {
+  const mainLog = readGitLog(REPOS.main, HISTORY_LIMIT);
+  const emeaLog = readGitLog(REPOS.emea, HISTORY_LIMIT);
+  const apacLog = readGitLog(REPOS.apac, HISTORY_LIMIT);
+
+  // Index EMEA/APAC by timestamp for matching
+  const emeaByTs = new Map();
+  for (const e of emeaLog) {
+    const ts = extractTimestamp(e.message);
+    if (ts) emeaByTs.set(ts, e);
+  }
+  const apacByTs = new Map();
+  for (const e of apacLog) {
+    const ts = extractTimestamp(e.message);
+    if (ts) apacByTs.set(ts, e);
+  }
+
+  // Build rows from main log, matching EMEA/APAC by timestamp
+  const rows = [];
+  for (const entry of mainLog) {
+    const ts = extractTimestamp(entry.message);
+    const mainJobs = extractJobCount(entry.message);
+    if (!ts || !mainJobs) continue; // Skip non-data commits (e.g. code changes)
+
+    const emea = emeaByTs.get(ts);
+    const apac = apacByTs.get(ts);
+
+    const mainCell = `[\`${entry.hash.slice(0, 7)}\`](${GITHUB_REPOS.main}/commit/${entry.hash}) ${mainJobs}`;
+    const emeaCell = emea
+      ? `[\`${emea.hash.slice(0, 7)}\`](${GITHUB_REPOS.emea}/commit/${emea.hash}) ${extractJobCount(emea.message) || '?'}`
+      : '—';
+    const apacCell = apac
+      ? `[\`${apac.hash.slice(0, 7)}\`](${GITHUB_REPOS.apac}/commit/${apac.hash}) ${extractJobCount(apac.message) || '?'}`
+      : '—';
+
+    rows.push(`| ${ts} | ${mainCell} | ${emeaCell} | ${apacCell} |`);
+  }
+
+  if (rows.length === 0) return '';
+
+  return `## Update History
+
+| Time (UTC) | Main | EMEA | APAC |
+|---|---|---|---|
+${rows.join('\n')}
+`;
+}
+
+// ============================================================================
 // README TEMPLATES
 // ============================================================================
 
-function mainReadme(groups, allJobs, logos) {
+function mainReadme(groups, allJobs, logos, historyTable) {
   const totalJobs = allJobs.length;
   const totalSalary = allJobs.filter(j => j.salaryMin || j.salaryMax || j.salary).length;
   const totalVerified = allJobs.filter(j => j.verifiedAt).length;
@@ -413,11 +514,13 @@ ${jobTable(groups.LATAM, logos)}
 
 ---
 
+${historyTable}
+
 *Updated automatically every hour. Powered by [wagey.gg](https://wagey.gg?ref=${REF}).*
 `;
 }
 
-function regionReadme(regionCode, regionLabel, jobs, allGroups, logos) {
+function regionReadme(regionCode, regionLabel, jobs, allGroups, logos, historyTable) {
   const totalJobs = jobs.length;
   const withSalary = jobs.filter(j => j.salaryMin || j.salaryMax || j.salary).length;
   const verified = jobs.filter(j => j.verifiedAt).length;
@@ -431,10 +534,6 @@ function regionReadme(regionCode, regionLabel, jobs, allGroups, logos) {
 |--|------|-------------|----------|
 | **${regionLabel} as of ${now}** | **${totalJobs.toLocaleString()}** | **${withSalary.toLocaleString()}** | **${verified.toLocaleString()}** |
 
-## Jobs
-
-${jobTable(jobs, logos)}
-
 > Upload your CV at [wagey.gg](https://wagey.gg?ref=${REF}) for smart matching and one-click apply.
 
 ## Other Regions
@@ -442,6 +541,14 @@ ${jobTable(jobs, logos)}
 - [**All regions (main list)**](https://github.com/7-of-9/wagey-gg-remote-tech-jobs)
 ${regionCode !== 'EMEA' ? `- [**Europe & Middle East**](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs) — ${(allGroups.EMEA?.length || 0).toLocaleString()} jobs\n` : ''}${regionCode !== 'APAC' ? `- [**Asia-Pacific**](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs) — ${(allGroups.APAC?.length || 0).toLocaleString()} jobs\n` : ''}
 ---
+
+## Jobs
+
+${jobTable(jobs, logos)}
+
+---
+
+${historyTable}
 
 *Updated automatically every hour. Powered by [wagey.gg](https://wagey.gg?ref=${REF}).*
 `;
@@ -530,18 +637,23 @@ async function main() {
   const emeaMsg = `${emeaCount.toLocaleString()} EMEA jobs | ${(groups.EMEA || []).filter(j => j.salaryMin || j.salaryMax || j.salary).length.toLocaleString()} with salary | ${(groups.EMEA || []).filter(j => j.verifiedAt).length.toLocaleString()} verified — ${now}`;
   const apacMsg = `${apacCount.toLocaleString()} APAC jobs | ${(groups.APAC || []).filter(j => j.salaryMin || j.salaryMax || j.salary).length.toLocaleString()} with salary | ${(groups.APAC || []).filter(j => j.verifiedAt).length.toLocaleString()} verified — ${now}`;
 
+  // Build cross-repo update history table
+  console.log('\n--- Building update history ---');
+  const historyTable = buildHistoryTable();
+  console.log(`  History: ${historyTable ? historyTable.split('\n').length - 4 : 0} entries`);
+
   console.log('\n--- Main repo ---');
-  writeFile(join(REPOS.main, 'README.md'), mainReadme(groups, jobs, logos));
+  writeFile(join(REPOS.main, 'README.md'), mainReadme(groups, jobs, logos, historyTable));
   writeFile(join(REPOS.main, 'data', 'jobs.json'), JSON.stringify(buildDataJson(jobs), null, 2));
   writeFile(join(REPOS.main, 'data', 'commit-msg.txt'), mainMsg);
 
   console.log('\n--- EMEA repo ---');
-  writeFile(join(REPOS.emea, 'README.md'), regionReadme('EMEA', 'Europe & Middle East', groups.EMEA || [], groups, logos));
+  writeFile(join(REPOS.emea, 'README.md'), regionReadme('EMEA', 'Europe & Middle East', groups.EMEA || [], groups, logos, historyTable));
   writeFile(join(REPOS.emea, 'data', 'jobs.json'), JSON.stringify(buildDataJson(groups.EMEA || []), null, 2));
   writeFile(join(REPOS.emea, 'data', 'commit-msg.txt'), emeaMsg);
 
   console.log('\n--- APAC repo ---');
-  writeFile(join(REPOS.apac, 'README.md'), regionReadme('APAC', 'Asia-Pacific', groups.APAC || [], groups, logos));
+  writeFile(join(REPOS.apac, 'README.md'), regionReadme('APAC', 'Asia-Pacific', groups.APAC || [], groups, logos, historyTable));
   writeFile(join(REPOS.apac, 'data', 'jobs.json'), JSON.stringify(buildDataJson(groups.APAC || []), null, 2));
   writeFile(join(REPOS.apac, 'data', 'commit-msg.txt'), apacMsg);
 
