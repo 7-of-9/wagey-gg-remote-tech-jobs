@@ -11,7 +11,7 @@
 | [Latin America](#latam) | 730 | 160 | 0 |
 | [Europe & Middle East](https://github.com/7-of-9/wagey-gg-remote-tech-emea-jobs) | 6,942 | 1,683 | 0 |
 | [Asia-Pacific](https://github.com/7-of-9/wagey-gg-remote-tech-apac-jobs) | 2,312 | 307 | 0 |
-| **Total as of 26-Feb-2026 01:33 UTC** | **21,139** | **9,607** | **0** |
+| **Total as of 26-Feb-2026 01:34 UTC** | **21,139** | **9,607** | **0** |
 
 > Upload your CV at [wagey.gg](https://wagey.gg?ref=github) for smart matching and one-click apply.
 
@@ -180,7 +180,7 @@ True remote — no location restriction.
 | <img src="https://wagey.gg/api/company-logo?id=aabadcf006405a77" alt="" height="16"> Parity | Android Engineer at Parity <br><sub>🌐 Remote • WW</sub> |  | 6d | [Apply](https://wagey.gg/jobs/6f4b6ac0a6789824-android-engineer-at-parity-at-parity?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?name=_placeholder" alt="" height="16"> Wikimedia Foundation | Principal Research Scientist <br><sub>🌐 Remote - Anywhere • WW</sub> | $165k–$251k/year | 6d | [Apply](https://wagey.gg/jobs/645448a9bab4b7d2-principal-research-scientist-at-wikimedia-foundation?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?name=_placeholder" alt="" height="16"> Wikimedia Foundation | Principal Research Scientist <br><sub>🌐 Remote - Anywhere • WW</sub> | $165k–$251k/year | 6d | [Apply](https://wagey.gg/jobs/c957efcd65752fe2-principal-research-scientist-at-wikimedia-foundation?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?name=_placeholder" alt="" height="16"> Wikimedia Foundation | Principal Research Scientist <br><sub>🌐 Remote - Anywhere • WW</sub> | $165k–$251k/year | 6d | [Apply](https://wagey.gg/jobs/184a48ea7b1e4d51-principal-research-scientist-at-wikimedia-foundation?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?name=_placeholder" alt="" height="16"> Wikimedia Foundation | Principal Research Scientist <br><sub>🌐 Remote - Anywhere • WW</sub> | $165k–$251k/year | 7d | [Apply](https://wagey.gg/jobs/184a48ea7b1e4d51-principal-research-scientist-at-wikimedia-foundation?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=8aea6f87d97b8579" alt="" height="16"> Ava Labs | Applied Cryptographer, AvaCloud <br><sub>🌐 Remote - (Global) • WW</sub> | $158k–$238k/year | 7d | [Apply](https://wagey.gg/jobs/58451b4d739a82a8-applied-cryptographer-avacloud-at-ava-labs?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?name=_placeholder" alt="" height="16"> Trust Wallet | Customer Service Agent <br><sub>🌐 Remote - Anywhere • WW</sub> |  | 7d | [Apply](https://wagey.gg/jobs/ca3c433f556d97cf-customer-service-agent-at-trust-wallet?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=6e794e911d97d69b" alt="" height="16"> Ethena Labs | Financial Associate <br><sub>🌐 Remote - Globally Remote • WW</sub> | $59k–$89k/year | 7d | [Apply](https://wagey.gg/jobs/7ccaa70e61caca51-financial-associate-at-ethena-labs?ref=github) |
@@ -613,7 +613,7 @@ True remote — no location restriction.
 | 🔒 ░░░░░░░░ | Machine Learning Engineer, Content an... <br><sub>🌐 Remote - USA • NA</sub> | $245k–$345k/year | 3h | [Pro](https://wagey.gg/pricing?ref=github) |
 | 🔒 ░░░░░░░░ | Head of Product <br><sub>🌐 Remote - New York City, NY, United  • NA</sub> | $185k–$225k/year | 3h | [Pro](https://wagey.gg/pricing?ref=github) |
 | 🔒 ░░░░░░░░ | Marketing & Enablement Senior Manager <br><sub>🌐 Remote - USA • NA</sub> | $96k–$106k/year | 3h | [Pro](https://wagey.gg/pricing?ref=github) |
-| 🔒 ░░░░░░░░ | Machine Learning Engineering Manager ... <br><sub>🌐 Remote - Boston, MA • NA</sub> | $176k–$252k/year | 3h | [Pro](https://wagey.gg/pricing?ref=github) |
+| 🔒 ░░░░░░░░ | Machine Learning Engineering Manager ... <br><sub>🌐 Remote - Boston, MA • NA</sub> | $176k–$252k/year | 4h | [Pro](https://wagey.gg/pricing?ref=github) |
 | 🔒 ░░░░░░░░ | Manager, Post-Sales Solution Architec... <br><sub>🌐 Remote - USA • NA</sub> |  | 4h | [Pro](https://wagey.gg/pricing?ref=github) |
 | 🔒 ░░░░░░░░ | Enterprise Development Representative... <br><sub>🌐 Remote - United States - Remote • NA</sub> |  | 4h | [Pro](https://wagey.gg/pricing?ref=github) |
 | 🔒 ░░░░░░░░ | AI Solutions Lead   <br><sub>🌐 Remote - USA • NA</sub> | $135k–$195k/year | 4h | [Pro](https://wagey.gg/pricing?ref=github) |
@@ -1236,7 +1236,7 @@ True remote — no location restriction.
 | <img src="https://wagey.gg/api/company-logo?id=2637bb16565bdc94" alt="" height="16"> Binance | Binance - Binance Accelerator Program <br><sub>🏢 UAE, Dubai / Argentina, Buenos Aire • LATAM</sub> |  | 6d | [Apply](https://wagey.gg/jobs/79cbbf370e7f329e-binance-binance-accelerator-program-at-binance?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=d642381bfe528616" alt="" height="16"> Connectly | LATAM Controller at Connectly <br><sub>🌐 Remote/LATAM (Col) - Hybrid • LATAM</sub> |  | 6d | [Apply](https://wagey.gg/jobs/c248039585d7cfe8-latam-controller-at-connectly-at-connectly?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=02641f076b0cc3a1" alt="" height="16"> Twilio | MDM Data Specialist <br><sub>🌐 Remote - Colombia • LATAM</sub> |  | 6d | [Apply](https://wagey.gg/jobs/41180535f4b47646-mdm-data-specialist-at-twilio?ref=github) |
-| <img src="https://wagey.gg/api/company-logo?id=901e86b7e7d773a8" alt="" height="16"> DYOPATH | SNOC Engineer I (Security) <br><sub>🌐 Remote - Mexico • LATAM</sub> |  | 6d | [Apply](https://wagey.gg/jobs/c395be59f1890ef6-snoc-engineer-i-security-at-dyopath?ref=github) |
+| <img src="https://wagey.gg/api/company-logo?id=901e86b7e7d773a8" alt="" height="16"> DYOPATH | SNOC Engineer I (Security) <br><sub>🌐 Remote - Mexico • LATAM</sub> |  | 7d | [Apply](https://wagey.gg/jobs/c395be59f1890ef6-snoc-engineer-i-security-at-dyopath?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?id=4ae35dbb42614d24" alt="" height="16"> prompt | Financial Customer Support Analyst <br><sub>🌐 Remote - Latin America * • LATAM</sub> | $55k–$65k/year | 7d | [Apply](https://wagey.gg/jobs/e27d6547363ce7aa-financial-customer-support-analyst-at-prompt?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?name=_placeholder" alt="" height="16"> lilt-production | Project Manager, AI Data <br><sub>🌐 Remote - India, Mexico, United Stat • LATAM</sub> |  | 7d | [Apply](https://wagey.gg/jobs/4ad40bc21154c6b3-project-manager-ai-data-at-lilt-production?ref=github) |
 | <img src="https://wagey.gg/api/company-logo?name=_placeholder" alt="" height="16"> G-P | Finance Associate <br><sub>🌐 Remote - Mexico (Remote-First) • LATAM</sub> |  | 7d | [Apply](https://wagey.gg/jobs/71abdae3b9b5d9a6-finance-associate-at-g-p?ref=github) |
