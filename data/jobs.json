@@ -680002,9 +680002,9 @@
   {
     "id": "fe731c50f1c64680",
     "title": "ML Ops/Production Engineer",
-    "company": null,
+    "company": "ent-security",
     "region": "NA",
-    "salary": null,
+    "salary": "",
     "salaryMin": null,
     "salaryMax": null,
     "skills": [],
@@ -680012,7 +680012,7 @@
     "ats": "ashby",
     "verifiedAt": "2026-08-01T17:39:46.341Z",
     "scrapedAt": "2026-08-01T17:39:44.674Z",
-    "url": null,
-    "visibility": "teaser"
+    "url": "https://wagey.gg/jobs/fe731c50f1c64680-ml-ops-production-engineer-at-ent-security?ref=github",
+    "visibility": "full"
   }
 ]
