@@ -225349,28 +225349,6 @@
     "visibility": "full"
   },
   {
-    "id": "597f872ba38396bd",
-    "title": "AI Engineer (Mid-Senior Level)",
-    "company": "Banyan Infrastructure Corporation",
-    "region": "NA",
-    "salary": "$180k–$215k/year",
-    "salaryMin": 180000,
-    "salaryMax": 215000,
-    "skills": [
-      "Java",
-      "Python",
-      "REST",
-      "AWS",
-      "Vue.js"
-    ],
-    "seniority": "senior",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:36:19.083Z",
-    "scrapedAt": "2026-05-17T12:33:57.271Z",
-    "url": "https://wagey.gg/jobs/597f872ba38396bd-ai-engineer-mid-senior-level-at-banyan-infrastructure-corporation?ref=github",
-    "visibility": "full"
-  },
-  {
     "id": "3fe11b551c7d08ae",
     "title": "Staff Advanced Analyst, Guest Engagement",
     "company": "Airbnb",
@@ -333949,47 +333927,6 @@
     "visibility": "full"
   },
   {
-    "id": "5a4b693f59171357",
-    "title": "Freelance Associate Director, Programmatic",
-    "company": "DEPT®",
-    "region": "NA",
-    "salary": "$208k/year",
-    "salaryMin": 208000,
-    "salaryMax": 208000,
-    "skills": [
-      "Team Management",
-      "Coaching",
-      "Strategic Planning",
-      "Quality Assurance",
-      "Team Leadership"
-    ],
-    "seniority": "director",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:40:16.106Z",
-    "scrapedAt": "2026-06-17T23:01:22.358Z",
-    "url": "https://wagey.gg/jobs/5a4b693f59171357-freelance-associate-director-programmatic-at-dept?ref=github",
-    "visibility": "full"
-  },
-  {
-    "id": "15ddfd5bf97eafbc",
-    "title": "Freelance Associate Director, Programmatic Retail",
-    "company": "DEPT®",
-    "region": "NA",
-    "salary": "$250k–$270k/year",
-    "salaryMin": 249600,
-    "salaryMax": 270400,
-    "skills": [
-      "Performance Management",
-      "Reporting"
-    ],
-    "seniority": "director",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:40:15.747Z",
-    "scrapedAt": "2026-06-17T23:01:22.543Z",
-    "url": "https://wagey.gg/jobs/15ddfd5bf97eafbc-freelance-associate-director-programmatic-retail-at-dept?ref=github",
-    "visibility": "full"
-  },
-  {
     "id": "256bdbcfb92141c2",
     "title": "Future Opportunities: Staff Software Engineer - Fuze Health",
     "company": "Fuze Health",
@@ -334029,28 +333966,6 @@
     "verifiedAt": "2026-07-28T22:40:18.267Z",
     "scrapedAt": "2026-06-17T23:01:32.270Z",
     "url": "https://wagey.gg/jobs/71973baa3af2cfc7-engineering-manager-growth-at-gitlab?ref=github",
-    "visibility": "full"
-  },
-  {
-    "id": "1eddd18f1100c5e8",
-    "title": "Senior Software Engineer",
-    "company": "Parachute Health",
-    "region": "NA",
-    "salary": "$165k–$210k/year",
-    "salaryMin": 165000,
-    "salaryMax": 210000,
-    "skills": [
-      "Ruby on Rails",
-      "Ruby",
-      "JavaScript",
-      "Python",
-      "AWS"
-    ],
-    "seniority": "senior",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:40:16.503Z",
-    "scrapedAt": "2026-06-17T23:01:34.260Z",
-    "url": "https://wagey.gg/jobs/1eddd18f1100c5e8-senior-software-engineer-at-parachute-health?ref=github",
     "visibility": "full"
   },
   {
@@ -334867,28 +334782,6 @@
     "verifiedAt": "2026-07-28T22:40:38.367Z",
     "scrapedAt": "2026-06-17T23:02:31.883Z",
     "url": "https://wagey.gg/jobs/1cbd23f551ea397c-sales-development-representative-enterprise-platforms-at-doit?ref=github",
-    "visibility": "full"
-  },
-  {
-    "id": "1b797ac0cbb9d64b",
-    "title": "Head of Client Services",
-    "company": "Easyship",
-    "region": "EMEA",
-    "salary": "",
-    "salaryMin": null,
-    "salaryMax": null,
-    "skills": [
-      "Customer Onboarding",
-      "Reporting",
-      "Customer Success",
-      "NRR",
-      "CSAT"
-    ],
-    "seniority": "director",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:40:39.547Z",
-    "scrapedAt": "2026-06-17T23:02:33.426Z",
-    "url": "https://wagey.gg/jobs/1b797ac0cbb9d64b-head-of-client-services-at-easyship?ref=github",
     "visibility": "full"
   },
   {
@@ -335928,28 +335821,6 @@
     "visibility": "full"
   },
   {
-    "id": "c65b8a905109a149",
-    "title": "Senior Staff Automation Engineer",
-    "company": "SmithRx",
-    "region": "NA",
-    "salary": "",
-    "salaryMin": null,
-    "salaryMax": null,
-    "skills": [
-      "Java",
-      "Python",
-      "TypeScript",
-      "JavaScript",
-      "Team Management"
-    ],
-    "seniority": "staff",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:41:03.535Z",
-    "scrapedAt": "2026-06-17T23:03:27.454Z",
-    "url": "https://wagey.gg/jobs/c65b8a905109a149-senior-staff-automation-engineer-at-smithrx?ref=github",
-    "visibility": "full"
-  },
-  {
     "id": "743566c61b295b0d",
     "title": "Project Manager II",
     "company": "Olsson",
@@ -336246,28 +336117,6 @@
     "verifiedAt": "2026-07-28T22:41:11.579Z",
     "scrapedAt": "2026-06-17T23:03:40.917Z",
     "url": "https://wagey.gg/jobs/de13431ea75d1bd8-senior-underwriter-accident-health-uk-at-integrated-specialty-coverages-llc?ref=github",
-    "visibility": "full"
-  },
-  {
-    "id": "dd539ef253d89ce3",
-    "title": "Associate Account Executive, UKI",
-    "company": "Veeam Software",
-    "region": "EMEA",
-    "salary": "",
-    "salaryMin": null,
-    "salaryMax": null,
-    "skills": [
-      "Excel",
-      "Cold Calling",
-      "Mentoring",
-      "Lead Generation",
-      "Close"
-    ],
-    "seniority": "junior",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:41:12.046Z",
-    "scrapedAt": "2026-06-17T23:03:41.350Z",
-    "url": "https://wagey.gg/jobs/dd539ef253d89ce3-associate-account-executive-uki-at-veeam-software?ref=github",
     "visibility": "full"
   },
   {
@@ -336875,28 +336724,6 @@
     "verifiedAt": "2026-07-28T22:41:37.823Z",
     "scrapedAt": "2026-06-17T23:03:59.956Z",
     "url": "https://wagey.gg/jobs/3b78efdaa5d29809-senior-product-manager-at-diligent-corporation?ref=github",
-    "visibility": "full"
-  },
-  {
-    "id": "2f2feb61a6fe4709",
-    "title": "Senior Delivery Manager",
-    "company": "NetDocuments",
-    "region": "NA",
-    "salary": "$125k–$150k/year",
-    "salaryMin": 125000,
-    "salaryMax": 150000,
-    "skills": [
-      "Coaching",
-      "Documentation",
-      "Team Management",
-      "Team Leadership",
-      "Stakeholder Management"
-    ],
-    "seniority": "senior",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:41:38.257Z",
-    "scrapedAt": "2026-06-17T23:04:00.591Z",
-    "url": "https://wagey.gg/jobs/2f2feb61a6fe4709-senior-delivery-manager-at-netdocuments?ref=github",
     "visibility": "full"
   },
   {
@@ -337975,25 +337802,6 @@
     "visibility": "full"
   },
   {
-    "id": "81cb9abe02f844b1",
-    "title": "People Operations",
-    "company": "NABIS",
-    "region": "NA",
-    "salary": "$85k–$90k/year",
-    "salaryMin": 85000,
-    "salaryMax": 90000,
-    "skills": [
-      "Reporting",
-      "Slack"
-    ],
-    "seniority": "senior",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:42:01.586Z",
-    "scrapedAt": "2026-06-17T23:30:53.055Z",
-    "url": "https://wagey.gg/jobs/81cb9abe02f844b1-people-operations-at-nabis?ref=github",
-    "visibility": "full"
-  },
-  {
     "id": "c918a9b451d6593e",
     "title": "Senior Infrastructure Engineer ",
     "company": "Webflow",
@@ -338093,28 +337901,6 @@
     "verifiedAt": "2026-07-28T22:42:02.399Z",
     "scrapedAt": "2026-06-17T23:30:54.930Z",
     "url": "https://wagey.gg/jobs/2e9819ccb516e7e5-sales-operations-lead-at-hightouch?ref=github",
-    "visibility": "full"
-  },
-  {
-    "id": "9f4ef8e6cbe413b2",
-    "title": "Director, Accounting",
-    "company": "OpenTable",
-    "region": "EMEA",
-    "salary": "",
-    "salaryMin": null,
-    "salaryMax": null,
-    "skills": [
-      "ACCA",
-      "CPA",
-      "Coaching",
-      "Close",
-      "Documentation"
-    ],
-    "seniority": "director",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:42:03.085Z",
-    "scrapedAt": "2026-06-17T23:30:55.995Z",
-    "url": "https://wagey.gg/jobs/9f4ef8e6cbe413b2-director-accounting-at-opentable?ref=github",
     "visibility": "full"
   },
   {
@@ -338267,26 +338053,6 @@
     "verifiedAt": "2026-07-28T22:42:03.675Z",
     "scrapedAt": "2026-06-17T23:31:06.076Z",
     "url": "https://wagey.gg/jobs/82d16f604c87bdaa-lead-supplier-api-account-manager-viator-at-tripadvisor?ref=github",
-    "visibility": "full"
-  },
-  {
-    "id": "8069bb03c1f46acf",
-    "title": " Principal Client Partner",
-    "company": "Tripadvisor",
-    "region": "EMEA",
-    "salary": "",
-    "salaryMin": null,
-    "salaryMax": null,
-    "skills": [
-      "Prospecting",
-      "Reporting",
-      "Sales Strategy"
-    ],
-    "seniority": "principal",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:42:03.528Z",
-    "scrapedAt": "2026-06-17T23:31:06.559Z",
-    "url": "https://wagey.gg/jobs/8069bb03c1f46acf-principal-client-partner-at-tripadvisor?ref=github",
     "visibility": "full"
   },
   {
@@ -338775,28 +338541,6 @@
     "visibility": "full"
   },
   {
-    "id": "375540a9579a2b31",
-    "title": "Software Engineering Manager (US - Remote)",
-    "company": "KnowBe4",
-    "region": "NA",
-    "salary": "$150k–$174k/year",
-    "salaryMin": 150000,
-    "salaryMax": 174000,
-    "skills": [
-      "Go",
-      "Rust",
-      "AWS",
-      "Slack",
-      ".NET"
-    ],
-    "seniority": "staff",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:42:15.269Z",
-    "scrapedAt": "2026-06-17T23:31:40.103Z",
-    "url": "https://wagey.gg/jobs/375540a9579a2b31-software-engineering-manager-us-remote-at-knowbe4?ref=github",
-    "visibility": "full"
-  },
-  {
     "id": "b471335cfac85689",
     "title": "Senior Design Program Manager, UX Design",
     "company": "PlayStation Global",
@@ -339028,28 +338772,6 @@
     "visibility": "full"
   },
   {
-    "id": "061f7947a672ab31",
-    "title": "Technical Account Manager",
-    "company": "Boulevard",
-    "region": "NA",
-    "salary": "$83k–$112k/year",
-    "salaryMin": 83200,
-    "salaryMax": 112300,
-    "skills": [
-      "Customer Success",
-      "Account Management",
-      "Learning & Development",
-      "Salesforce",
-      "Slack"
-    ],
-    "seniority": "mid",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:42:32.345Z",
-    "scrapedAt": "2026-06-17T23:31:47.156Z",
-    "url": "https://wagey.gg/jobs/061f7947a672ab31-technical-account-manager-at-boulevard?ref=github",
-    "visibility": "full"
-  },
-  {
     "id": "8e8db645f8807cdd",
     "title": "Senior Associate, Data Cloud Applications ",
     "company": "Zeta Global",
@@ -339238,22 +338960,6 @@
     "verifiedAt": "2026-07-28T22:42:32.239Z",
     "scrapedAt": "2026-06-17T23:31:58.947Z",
     "url": "https://wagey.gg/jobs/a2a8d976b36123fd-channel-partner-manager-southern-europe-at-devrev?ref=github",
-    "visibility": "full"
-  },
-  {
-    "id": "141a243af64b5a22",
-    "title": "Sr. Engineer - Core Network",
-    "company": "Lumos",
-    "region": "NA",
-    "salary": "",
-    "salaryMin": null,
-    "salaryMax": null,
-    "skills": [],
-    "seniority": "senior",
-    "ats": "greenhouse",
-    "verifiedAt": "2026-07-28T22:42:34.835Z",
-    "scrapedAt": "2026-06-17T23:31:59.462Z",
-    "url": "https://wagey.gg/jobs/141a243af64b5a22-sr-engineer-core-network-at-lumos?ref=github",
     "visibility": "full"
   },
   {
@@ -340036,22 +339742,6 @@
     "visibility": "full"
   },
   {
-    "id": "1086ab672c2de66d",
-    "title": "Civil Engineer (Contract)",
-    "company": "eagle",
-    "region": "NA",
-    "salary": "$208k–$312k/year",
-    "salaryMin": 208000,
-    "salaryMax": 312000,
-    "skills": [],
-    "seniority": null,
-    "ats": "ashby",
-    "verifiedAt": "2026-07-28T22:42:39.910Z",
-    "scrapedAt": "2026-06-17T23:32:37.971Z",
-    "url": "https://wagey.gg/jobs/1086ab672c2de66d-civil-engineer-contract-at-eagle?ref=github",
-    "visibility": "full"
-  },
-  {
     "id": "38e34e0e262c57d0",
     "title": "Enterprise Account Executive",
     "company": "envoy",
@@ -340274,28 +339964,6 @@
     "verifiedAt": "2026-07-28T22:42:43.116Z",
     "scrapedAt": "2026-06-17T23:32:45.546Z",
     "url": "https://wagey.gg/jobs/68d2000fadd424f2-senior-business-systems-analyst-at-goodlord?ref=github",
-    "visibility": "full"
-  },
-  {
-    "id": "6a5d89bcb56221c0",
-    "title": "Senior Product & Privacy Counsel",
-    "company": "goteleport",
-    "region": "NA",
-    "salary": "$212k–$266k/year",
-    "salaryMin": 212000,
-    "salaryMax": 266000,
-    "skills": [
-      "Training Development",
-      "Claude",
-      "Governance",
-      "Documentation",
-      "Intellectual Property"
-    ],
-    "seniority": "mid",
-    "ats": "ashby",
-    "verifiedAt": "2026-07-28T22:42:45.960Z",
-    "scrapedAt": "2026-06-17T23:32:46.999Z",
-    "url": "https://wagey.gg/jobs/6a5d89bcb56221c0-senior-product-privacy-counsel-at-goteleport?ref=github",
     "visibility": "full"
   },
   {
@@ -468595,25 +468263,6 @@
     "verifiedAt": "2026-07-28T22:43:21.903Z",
     "scrapedAt": "2026-07-22T07:27:17.439Z",
     "url": "https://wagey.gg/jobs/81f426d0e09a9268-senior-paralegal-employment-litigation-remote-at-aledade?ref=github",
-    "visibility": "full"
-  },
-  {
-    "id": "1f44c0c478cf7f59",
-    "title": "Specialist, Population Health Impact, Remote",
-    "company": "aledade",
-    "region": "NA",
-    "salary": "",
-    "salaryMin": null,
-    "salaryMax": null,
-    "skills": [
-      "Team Management",
-      "Coaching"
-    ],
-    "seniority": "mid",
-    "ats": "lever",
-    "verifiedAt": "2026-07-28T22:43:21.622Z",
-    "scrapedAt": "2026-07-22T07:27:18.977Z",
-    "url": "https://wagey.gg/jobs/1f44c0c478cf7f59-specialist-population-health-impact-remote-at-aledade?ref=github",
     "visibility": "full"
   },
   {
